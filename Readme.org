@@ -3,5 +3,7 @@
 
 * Resources
 - Prof Stewart Weiss' 235 page: http://www.cs.hunter.cuny.edu/~sweiss/course_materials/csci235/csci235_f17.php
+- John Sterlings C++ class notes: - John Sterlings C++ Class Notes: http://cis.poly.edu/jsterling/cs2124/
+
 - Pointer reference: http://www.ntu.edu.sg/home/ehchua/programming/cpp/cp4_pointerreference.html
 
