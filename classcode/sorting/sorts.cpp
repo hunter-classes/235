@@ -97,6 +97,7 @@ std::vector<int> msort(std::vector<int> list){
 
 
 std::vector<int> qsort(std::vector<int> list){
+  int i;
   if (list.size() <= 1)
     return list;
 
@@ -104,13 +105,28 @@ std::vector<int> qsort(std::vector<int> list){
   int pivot = list[0];
 
   // partition data set into lower and upper
+  for (i = 1; i < list.size(); i++) {
+    if (list[i] <= pivot)
+      lower.push_back(list[i]);
+    else
+      upper.push_back(list[i]);
+  }
 
+  
   // recurse
   lower = qsort(lower);
   upper = qsort(upper);
 
   // copy it all back to list
-
+  for (i=0;i<lower.size();i++){
+    list[i] = lower[i];
+  }
+  list[i] = pivot;
+  i++;
+  for (int j = 0; j < upper.size() ; j++){
+    list[i]=upper[j];
+    i++;
+  }
   return list;
   
 }
@@ -119,7 +135,7 @@ std::vector<int> qsort(std::vector<int> list){
 int main(int argc, char *argv[])
 {
   int i;
-  int size=100000;
+  int size=500000;
   std::vector<int> a(size);
   
   srand(time(NULL));
@@ -134,7 +150,7 @@ int main(int argc, char *argv[])
   long start_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
   
   
-  a=msort(a);
+  a=qsort(a);
 
   gettimeofday(&tp,NULL);
   long current_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
