@@ -32,8 +32,8 @@ std::vector<int> ssort(std::vector<int> a){
 
   
 void print_vector(std::vector<int> a){
-  for (int i = 0; i < a.size(); ++i) {
-    std::cout << a[i] << ", ";;
+  for (auto i : a){
+    std::cout << i << ", ";
   }
   std::cout << "\n";
 }
@@ -93,6 +93,28 @@ std::vector<int> msort(std::vector<int> list){
   return list;
   
 }
+
+
+
+std::vector<int> qsort(std::vector<int> list){
+  if (list.size() <= 1)
+    return list;
+
+  std::vector<int> lower,upper;
+  int pivot = list[0];
+
+  // partition data set into lower and upper
+
+  // recurse
+  lower = qsort(lower);
+  upper = qsort(upper);
+
+  // copy it all back to list
+
+  return list;
+  
+}
+
 
 int main(int argc, char *argv[])
 {
