@@ -131,11 +131,41 @@ std::vector<int> qsort(std::vector<int> list){
   
 }
 
+void qsort2(std::vector<int> &a, int left, int right)
+{
+  int i = left, j = right;
+  int tmp;
+  int pivot;
+  pivot = a[left];
+  
+  /* partition */
+  while (i <= j) {
+    while (a[i] < pivot)
+      i++;
+    while (a[j] > pivot)
+      j--;
+    if (i <= j) {
+		tmp = a[i];
+		a[i] = a[j];
+		a[j] = tmp;
+		i++;
+		j--;
+      
+	      }
+	    }  
+  if (left < j)
+    qsort2(a, left, j);
+
+  if (i< right)
+    qsort2(a, i, right);
+  
+}
+
 
 int main(int argc, char *argv[])
 {
   int i;
-  int size=500000;
+  int size=6000000;
   std::vector<int> a(size);
   
   srand(time(NULL));
@@ -150,8 +180,8 @@ int main(int argc, char *argv[])
   long start_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
   
   
-  a=qsort(a);
-
+  // a=msort(a);
+  qsort2(a,0,a.size()-1);
   gettimeofday(&tp,NULL);
   long current_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
 
