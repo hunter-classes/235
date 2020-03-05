@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <time.h>
+#include <unistd.h>
 #include <cstdlib>
 #include <sys/time.h>
 #include <math.h>
@@ -162,31 +163,72 @@ void qsort2(std::vector<int> &a, int left, int right)
 }
 
 
+void print_help(std::string progname){
+  std::cout << "Usage: " << progname << "[-p | -s N  | -a algorithm ]" << "\n";
+  std::cout << "       " << "Algorithm s,m,q,2\n";
+}
+
+extern char *optarg;
 int main(int argc, char *argv[])
 {
   int i;
-  int size=6000000;
+  int size=20;
+  char algorithm = 's';
+  bool print = false;
+  char c;
+
+
+  while ( (c = getopt(argc, argv,"ps:a:h")) != -1){
+    switch(c){
+    case 'h' :
+      print_help(argv[0]);
+      exit(0);
+      break;
+    case 'p':
+      print = true;
+      break;
+    case 's':
+      size = std::stoi(optarg);
+      break;
+    case 'a':
+      algorithm = *optarg;
+      break;
+    }
+  }
+
   std::vector<int> a(size);
-  
   srand(time(NULL));
   for (i = 0; i < size; ++i) {
     a[i] = rand()%1000;
   }
-  // print_vector(a);
+  if (print)
+    print_vector(a);
 
   std::cout << "Start!!\n";
   struct timeval tp;
   gettimeofday(&tp,NULL);
   long start_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
   
-  
-  // a=msort(a);
-  qsort2(a,0,a.size()-1);
+  switch (algorithm){
+  case 's':
+    a = ssort(a);
+    break;
+  case 'm':
+    a = msort(a);
+    break;
+  case 'q' :
+    a = qsort(a);
+    break;
+  case '2':
+    qsort2(a,0,a.size()-1);
+    break;
+  }
   gettimeofday(&tp,NULL);
   long current_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
 
   long elapsed = current_time - start_time;
-  // print_vector(a);
+  if (print)
+    print_vector(a);
   std::cout << "time: " << elapsed << "\n";
   return 0;
 }
