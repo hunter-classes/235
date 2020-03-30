@@ -39,12 +39,12 @@ void solve(std::string maze[30], int row, int col){
   while (!s.empty()){
     l = s.front(); // returns the front item
     s.pop(); // removes the front item
-      r = l.r;
-      c = l.c;
-      if (maze[r][c]=='$'){
-	std::cout << "SOLVED!!!!!\n";
-	return;
-      }
+    r = l.r;
+    c = l.c;
+    if (maze[r][c]=='$'){
+      std::cout << "SOLVED!!!!!\n";
+      return;
+}
 
       maze[r][c]='z';
       usleep(40000);
