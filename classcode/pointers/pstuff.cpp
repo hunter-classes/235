@@ -1,4 +1,23 @@
 
+Node *reverse(Node *l){
+  Node *prev = nullptr;
+  Node *curr = l;
+
+  if (l==nullptr)
+    return l;
+
+  Node *next = cur->getNext();
+  while (next != nullptr){
+    curr->setNext(prev);
+    prev = curr;
+    curr = next;
+    next = curr->getNext();
+  }
+  curr->setNext(prev);
+  return curr;
+}
+
+
 Node *merge(Node *a, Node *b){
   Node *ap;
   Node *bp;
@@ -18,7 +37,7 @@ Node *merge(Node *a, Node *b){
       bp = bp->getNext();
       tmp->setNext(newlist);
       newlist = tmp;
-      }
+    }
   }
 
   /*  one of the two lists will need to be copied over */
