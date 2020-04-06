@@ -6,7 +6,7 @@
 
 int length(Node *l){
   int count=0;
-  if (head==nullptr){
+  if (l==nullptr){
     return 0;
   }
   Node *l  head;
@@ -16,6 +16,19 @@ int length(Node *l){
   }
   return count;
 }
+
+
+int length(Node *l){
+
+  if (l==nullptr){
+    return 0;
+  }
+  return 1+length(l->getNExt());
+}
+
+
+
+
 
 Node *middle(Node *head){
   Node *tmp = head;
@@ -82,7 +95,7 @@ Node *rotate(Node *head, int position){
     O(lgn) binary search
     O(n) - removal would be O(1) but you have to find the element first
          - and you don't know if the pointer points to it or not
-	 O(n) - must search through every element
+    O(n) - must search through every element
 
 */
 
