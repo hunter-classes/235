@@ -11,11 +11,14 @@ public:
   List();
   ~List();
   void insert(std::string data);
+  std::string getDebugR();
+  std::string getDebugRHelper(Node *l);
   std::string getDebugString();
   void push_back(std::string);
   int size() ;
   void remove(int i);
   std::string &operator[](int); // overloaded square brackets
+
 };
 
 

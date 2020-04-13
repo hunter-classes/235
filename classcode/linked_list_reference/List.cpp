@@ -34,6 +34,17 @@ void List::insert(std::string data){
   }
 }
 
+std::string List::getDebugRHelper(Node *l){
+  if (l==nullptr){
+    return "";
+  } else {
+    return l->getData() + "-->" + getDebugRHelper(l->getNext());
+  } 
+  
+}
+std::string List::getDebugR(){
+  return getDebugRHelper(head);
+}
 std::string List::getDebugString(){
   std::string s = "";
   Node *t = head;

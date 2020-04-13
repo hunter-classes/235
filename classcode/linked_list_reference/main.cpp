@@ -22,6 +22,8 @@ int main()
   (*l)[2]="ZOWIE";
   std::cout << l->getDebugString();
 
+  std::cout<< "\n\n RECURSIVE\n";
+  std:: cout <<  l->getDebugR() << "\n";
 
 
   List l2;
