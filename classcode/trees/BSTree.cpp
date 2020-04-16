@@ -2,6 +2,11 @@
 #include "Node.h"
 #include "BSTree.h"
 
+// Binary Search Tree
+// Binary tree - every node has 0 1 or 2 children
+// Given a node N
+// every node in N's left subtree has a value < the value in N
+// every node in N's right subtree has a value > the value in N
 BSTree::BSTree(){
   root = nullptr;
 }
