@@ -23,8 +23,22 @@ void BSTree::insert(int d){
     }
 
   // search for the insertion point
-
-  // insert n as a new leaf at that point
+  Node *t = root;
+  Node *t2;
+  while (t != nullptr){
+    t2 = t;
+    
+    if (t->getData() < d)
+      t = t->getRight();
+    else
+      t = t->getLeft();
+  }
+  // Now, t is at null but t2 is at the node we want to link from.
+  if (d < t2->getData())
+    t2->setLeft(n);
+  else
+    t2->setRight(n);
+  
 }
 std::string BSTree::gds_helper(Node *n){
   if (n==nullptr){
