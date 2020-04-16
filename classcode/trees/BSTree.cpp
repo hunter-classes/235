@@ -7,6 +7,7 @@
 // Given a node N
 // every node in N's left subtree has a value < the value in N
 // every node in N's right subtree has a value > the value in N
+
 BSTree::BSTree(){
   root = nullptr;
 }
@@ -45,3 +46,18 @@ void BSTree::setup(){
   
 }
   
+int BSTree::search(int value){
+  Node *t = root;
+
+  while (t != nullptr){
+    if (t->getData()==value)
+      return value;
+    else if (t->getData() > value)
+      t = t->getLeft();
+    else
+      t = t->getRight();
+   }
+  throw -1;
+  return 0;
+}
+
