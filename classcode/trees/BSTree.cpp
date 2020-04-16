@@ -15,19 +15,20 @@ BSTree::BSTree(){
 void BSTree::insert(int d){
   
 }
-std::string BSTree::get_debug_string(){
-
-  if (root == nullptr){
+std::string BSTree::gds_helper(Node *n){
+  if (n==nullptr){
     return "";
   } else {
-    Node *n = root;
-    std::string s = std::to_string( n->getData()) + " " + std::to_string(n->getLeft()->getData()) + " " + std::to_string(n->getRight()->getData());
-
-    n = root->getRight();
-    s = s + "\n" + std::to_string( n->getData()) + " " + std::to_string(n->getLeft()->getData()) + " " + std::to_string(n->getRight()->getData());
-    return s;
+    return std::to_string(n->getData()) + " - " +
+      gds_helper(n->getLeft()) +
+      gds_helper(n->getRight());
   }
 };
+
+std::string BSTree::get_debug_string(){
+  return gds_helper(root);
+};
+
 void BSTree::setup(){
   Node *n = new Node(10);
   root = n;
@@ -45,7 +46,9 @@ void BSTree::setup(){
   n2->setLeft(n);
   
 }
-  
+
+
+
 int BSTree::search(int value){
   Node *t = root;
 
@@ -61,3 +64,24 @@ int BSTree::search(int value){
   return 0;
 }
 
+
+int BSTree::searchr(Node *n, int value){
+  if (n==nullptr)
+    throw -1;
+
+  if (n->getData()==value)
+	return value;
+      else if (n->getData() > value)
+	return this->searchr(n->getLeft(),value);
+      else return this->searchr(n->getRight(),value);
+
+
+  return 0;
+  
+}
+
+int BSTree::searchr(int value){
+  int r=  this->searchr(root,  value);
+
+  return r;
+}
