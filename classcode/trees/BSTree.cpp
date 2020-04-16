@@ -13,7 +13,18 @@ BSTree::BSTree(){
 }
 
 void BSTree::insert(int d){
-  
+  // insert new nodes as a leaf
+
+  Node *n = new Node(d);
+
+  if (root==nullptr){
+    root = n;
+    return;
+    }
+
+  // search for the insertion point
+
+  // insert n as a new leaf at that point
 }
 std::string BSTree::gds_helper(Node *n){
   if (n==nullptr){
