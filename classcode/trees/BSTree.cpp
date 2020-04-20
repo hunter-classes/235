@@ -241,7 +241,9 @@ void delete(Node *n,int value){
   //   from by recursively calling delete
   // on the subtree where that node lives.
 
-
+  // IMPORTANT CAVEAT - if you want to delete the
+  // root you might need some special case code
+  
 }
 
 void delete(int value){
