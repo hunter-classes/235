@@ -6,15 +6,21 @@ int main()
 
   BSTree *t = new BSTree();
 
-  t->insert(10);
-  t->insert(5);
-  t->insert(15);
-
-  std::cout <<  t->get_debug_string() << "\n";
-
-  t->insert(3);
+  t->insert(50);
+  t->insert(30);
+  t->insert(80);
   t->insert(20);
+  t->insert(15);
+  t->insert(90);
+  t->insert(85);
+  t->insert(75);
+
+
   std::cout <<  t->get_debug_string() << "\n";
+
+  // t->insert(3);
+  // t->insert(20);
+  // std::cout <<  t->get_debug_string() << "\n";
 
   /*
     try {

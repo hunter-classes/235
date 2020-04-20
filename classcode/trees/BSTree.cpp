@@ -8,6 +8,41 @@
 // every node in N's left subtree has a value < the value in N
 // every node in N's right subtree has a value > the value in N
 
+// Search
+// O(lgn) if balanced / full
+// but it can degenerate into linear
+
+// insertion
+// O(lgn) if balanced / full
+// O(n) if it is the degenerative form (linked list)
+
+// Building a BSTree
+// N*insertion time
+// O(nlgn) if balanced / full
+// O(n^2) if the degenerative case
+
+/*  
+    Array:
+      direct access / lgn search if sorted
+      but linear for insert and delete
+  
+    LL:
+     easy insert and dete but everything is linear
+  
+    BST:
+      lgn insert / delete / search 
+      nlgn building
+      BUT: only if full/balanced otherwise
+           no better than LL
+
+Common Data Structures used for tree storage:
+red/black trees
+2/3 trees 
+BTree 
+
+Splay tree
+
+*/
 BSTree::BSTree(){
   root = nullptr;
 }
@@ -41,12 +76,54 @@ void BSTree::insert(int d){
   
 }
 std::string BSTree::gds_helper(Node *n){
+  std::string a,b,c;
+  
   if (n==nullptr){
     return "";
   } else {
-    return std::to_string(n->getData()) + " - " +
-      gds_helper(n->getLeft()) +
-      gds_helper(n->getRight());
+
+    /*
+      In order traversal
+
+      1. recursively process the left subtree
+      2. Process the current node
+      3. recursively process the right subtree
+
+      This will traverse a BSTree in sorted order.
+
+    */
+    
+      a =  gds_helper(n->getLeft());
+      b = std::to_string(n->getData());
+      c =  gds_helper(n->getRight());
+
+      /*
+       * 
+       preorder traversal
+       1. process the node
+       2. recurse left
+       3. recurse right
+      */
+      
+      // a = std::to_string(n->getData());
+      // b =  gds_helper(n->getLeft());
+      // c =  gds_helper(n->getRight());
+    
+      /*
+       * 
+       postorder traversal
+       1. recurse left
+       2. recurse right
+       3. process the node
+	*/
+
+      // a =  gds_helper(n->getLeft());
+      // b =  gds_helper(n->getRight());
+      // c = std::to_string(n->getData());
+
+    return a + ", " + b+ ", " + c;
+
+     
   }
 };
 
