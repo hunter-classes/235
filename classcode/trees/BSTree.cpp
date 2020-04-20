@@ -187,3 +187,63 @@ int BSTree::searchr(int value){
 
   return r;
 }
+
+
+void delete(Node *n,int value){
+  if (root==nullptr){
+    return;
+  }
+
+  // search for the insertion point
+  Node *t = root;
+  Node *t2;
+  while (t!=nullptr && t.getData()  != value){
+    t2 = t;
+    
+    if (t->getData() < value)
+      t = t->getRight();
+    else
+      t = t->getLeft();
+  }
+
+  // if t == nullptr then the value isn't
+  // in the tree
+  if (t==nullptr)
+    return;
+
+  // t points to the node we want to delete
+  // t2 points to its parent
+  
+  // The node we want to delete is a leaf
+  // point t2's appropriate pointer to null
+  
+  // The node we want to delete has one child
+  // point t2's appropriate pointer to t's
+  // child
+
+  // Note - the above two cases can be combined
+  
+  // the node we want to delete has two children
+  // 1. Replace the node we want to delete
+  //    with either the largest value in its
+  //    left subtree or the smallest value in
+  //    its right subtree 
+  
+  // we find the largest on the left subtree by
+  // going to left child and then as far right as
+  // we can
+
+  // we find the smallest on the right subtree by
+  // going to the right child and then as far left
+  // as we can.
+
+  // 2. We can then delete the node that we relaced
+  //   from by recursively calling delete
+  // on the subtree where that node lives.
+
+
+}
+
+void delete(int value){
+  delete (root,value);
+}
