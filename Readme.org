@@ -7,3 +7,15 @@
 
 - Pointer reference: http://www.ntu.edu.sg/home/ehchua/programming/cpp/cp4_pointerreference.html
 
+* Syllabus
+** Recursion
+** Backtracking algorithms / state space
+** Lists
+** Sorting / Searching 
+** Run time 
+** Stacks
+** Queues
+** Trees
+** Heaps
+** Hash tables
+
