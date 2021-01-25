@@ -1,11 +1,11 @@
 * CSCI 235 - Daedalus
 
-| Meets        | Monday Thursday 9:45 - 11:00                |
-| Instructor   | Mike Zamansky                               |
-| Email        | mz631@hunter.cuny.edu                       |
-| Office       | 1001K Hunter North                          |
-| Office Hours | By appointment                              |
-| Zoom Link    | https://huntercollege.zoom.us/j/94610804431 |
+| Meets        | Monday Thursday 9:45 - 11:00                                               |
+| Instructor   | Mike Zamansky                                                              |
+| Email        | mz631@hunter.cuny.edu                                                      |
+| Office       | 1001K Hunter North                                                         |
+| Office Hours | By appointment                                                             |
+| Zoom Link    | https://us02web.zoom.us/j/83042281329?pwd=VmN2WUk1YlZRU3UzdVpVeVdGTldCUT09 |
 
 * Link to main 23500 page:
 - [[https://maryash.github.io/235/][Main 235 page]]
