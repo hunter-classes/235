@@ -53,8 +53,8 @@ int main()
     std::cout << i << "! = " << fact(i) << "\n";
     }
 
-    for (i=0; i < 10 ; i++){
-    std::cout << fib(i) << ", ";
+    for (i=0; i < 52 ; i++){
+      std::cout << i << " : " << fib(i) << "\n";
     
     }
     std::cout << "\n";
