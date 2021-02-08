@@ -46,8 +46,8 @@ the [[https://tong-yee.github.io/135/2020_fall.html][main 135 lecture]] page.
 
 Students are asked to have their cameras on during synchronous classes
 as this makes the class feel more like a community. If a student does
-not wish or is unable to comply with this request they must disucss
-this with the instructor the instructor 
+not wish or is unable to comply with this request they should inform
+the instructor via email.
 
 * Syllabus
 ** Recursion
@@ -61,5 +61,5 @@ this with the instructor the instructor
 ** Heaps
 ** Hash tables
 
-* Additional syllabus items
+* Additional syllabus items on compliance and Hunter policies:
 - [[syllabus-docs.org]]
