@@ -3,7 +3,6 @@
 #include <string>
 #include <unistd.h>
 
-std::string maze[27];
 
 int load_maze(std::string filename, std::string *maze){
   std::ifstream infile(filename);
@@ -18,6 +17,7 @@ int load_maze(std::string filename, std::string *maze){
 
 int main(int argc, char *argv[])
 {
+std::string maze[27];
   int lines;
   lines = load_maze("maze.dat",maze);
   
