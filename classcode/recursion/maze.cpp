@@ -26,10 +26,8 @@ void print_maze(std::string maze[], int lines){
 }
 
 void solve(std::string maze[], int lines, int row, int col, bool &solved){
-
-  
   // check for base cases
-
+ 
   // we can't go any further along this path
   // we hit a wall or ourselves
   char current = maze[row][col];
