@@ -86,14 +86,17 @@ void List::insert(std::string data){
 
 **main.cpp:**
 
+```c++
+List *l1 = new List();
+std::cout << l1->toString() << std::endl;
 ```
-*List *l1 = new List();*
-*std::cout << l1->toString() << std::endl;*
--returns "" because you are trying to get something from nothing
-*l1->insert("a");*
-*l1->insert("b");*
-*l1->insert("c");*
-*std::cout << l1->toString() << std::endl;*
+
+- returns "" because you are trying to get something from nothing
+```c++
+l1->insert("a");
+l1->insert("b");
+l1->insert("c");
+std::cout << l1->toString() << std::endl;
 ```
 - prints out as c, b, a (reverse) totally acceptable for now!
 
