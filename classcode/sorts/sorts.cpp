@@ -47,6 +47,36 @@ std::vector<int> ssort(std::vector<int> a){
   return a;
 }
 
+
+/*
+ *  Merge sort pseudocode
+
+
+merge(r1, r2){
+
+walk down r1 and r2 copying the smaller one into result until combined.
+
+}
+ merge_sort(a){
+    if (size of a > 1){
+      split a into two halves (left_half and right_half)
+      result_1 = merge_sort(left_half);
+      result_2 = merge_sort(right_half);
+
+      // now, result_1 and result_2 are sorted 
+      // so we have to merge them
+      final_result = merge(result_1 and result_2)
+      return final_result 
+      } else {
+      return a; //since it's already sorted
+      }
+ 
+
+ }
+
+
+
+*/
 int main()
 {
   srand(time(NULL));
