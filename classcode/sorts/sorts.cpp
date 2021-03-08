@@ -48,35 +48,69 @@ std::vector<int> ssort(std::vector<int> a){
 }
 
 
-/*
- *  Merge sort pseudocode
+std::vector<int> merge(std::vector<int> left, std::vector<int> right)
+{
+  int i = 0; 
+  int j = 0;
+  std::vector<int> merged;
+  while(i < left.size() && j < right.size())
+  {
+    if(left[i] <= right[j])
+    {
+      merged.push_back(left[i]);
+      i++;
+    }
+    else 
+    {
+      merged.push_back(right[j]);
+      j++;
+    }
+  }
+  
+  while(j != right.size())
+    {
+      merged.push_back(right[j]);
+      j++;
+    }
+  while(i != left.size())
+    {
+      merged.push_back(left[i]);
+      i++;
+    }
+  
 
-
-merge(r1, r2){
-
-walk down r1 and r2 copying the smaller one into result until combined.
-
+  return merged;
 }
- merge_sort(a){
-    if (size of a > 1){
-      split a into two halves (left_half and right_half)
-      result_1 = merge_sort(left_half);
-      result_2 = merge_sort(right_half);
-
-      // now, result_1 and result_2 are sorted 
-      // so we have to merge them
-      final_result = merge(result_1 and result_2)
-      return final_result 
-      } else {
-      return a; //since it's already sorted
-      }
- 
-
- }
 
 
+std::vector<int> msort(std::vector<int> list){
 
-*/
+  // base case
+  if (list.size() <= 1 ){
+    return list;
+  }
+
+  // split
+  int mid = list.size() / 2;
+  std::vector<int> a,b;
+  int i;
+  for (i=0;i<mid;i++){
+    a.push_back(list[i]);
+  }
+
+  for (i=mid;i<list.size();i++){
+    b.push_back(list[i]);
+  }
+  
+  // recurse
+  a = msort(a);
+  b = msort(b);
+  // merge
+  list = merge(a,b);
+  return list;
+  
+}
+
 int main()
 {
   srand(time(NULL));
@@ -86,7 +120,7 @@ int main()
     a[i] = rand()%100;    
   }
   print_vector(a);
-  a = ssort(a);
+  a = msort(a);
   print_vector(a);
 
   
