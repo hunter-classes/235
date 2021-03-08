@@ -111,18 +111,79 @@ std::vector<int> msort(std::vector<int> list){
   
 }
 
-int main()
-{
-  srand(time(NULL));
-  std::vector<int> a(20);
-  int i;
-  for(i=0;i<20;i++){
-    a[i] = rand()%100;    
-  }
-  print_vector(a);
-  a = msort(a);
-  print_vector(a);
 
+void print_help(char *command_name){
+  std::cout << "Usage: " << command_name << " etc.\n";
+  
+}
+
+extern char *optarg;
+
+
+int main(int argc, char *argv[])
+{
+  int size = 20; // default vector size
+  char algorithm = 's' ; //default to selection sort
+  int max_val = 100; // default max value for entries
+  bool print = false; // do we print before and after sorting?
+  char c;
+
+  while ( ( c = getopt(argc, argv, "phs:m:a:")) != -1){
+
+    switch (c) {
+    case 'h' :
+      print_help(argv[0]);
+      exit(0);
+      break;
+    case 'p' :
+      print = true;
+      break;
+    case 's' :
+      size = std::stoi(optarg);
+      break;
+    case 'm' :
+      max_val = std::stoi(optarg);
+      break;
+    case 'a':
+      algorithm = optarg[0]; // or *optarg
+    }
+  }
+  
+
+  srand(time(NULL));
+  std::vector<int> a(size);
+  int i;
+  for(i=0;i<size;i++){
+    a[i] = rand()%max_val;    
+  }
+  if (print) {
+   print_vector(a); 
+  }
+
+  std::cout << "Starting the sort!\n";
+  struct timeval tp;
+  gettimeofday(&tp,NULL);
+  long start_time = tp.tv_sec *1000 + tp.tv_usec / 1000;
+  if (algorithm == 's'){
+    a = ssort(a);
+  } else if (algorithm == 'm'){
+
+    a = msort(a);
+  }
+
+  a = msort(a);
+
+
+  gettimeofday(&tp,NULL);
+  long current_time = tp.tv_sec *1000 + tp.tv_usec / 1000;
+
+  long elapsed = current_time - start_time;
+  
+  if (print) {
+   print_vector(a); 
+  }
+
+  std::cout << "Time: " << elapsed << "\n";
   
   return 0;
 }
