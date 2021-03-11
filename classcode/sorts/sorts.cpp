@@ -7,6 +7,7 @@
 #include <math.h>
 
 
+
 void print_vector(std::vector<int> a){
   for (auto i : a) {
     std::cout << i << ", ";
@@ -34,8 +35,10 @@ std::vector<int> ssort(std::vector<int> a){
   int len = a.size();
   int min_index;
 
+  // O(n)
   for (i = 0; i < len; ++i) {
     // find the ith smallest element
+    // find_min is O(n)
     min_index = find_min_index(a,i,len);
     
     
@@ -44,6 +47,8 @@ std::vector<int> ssort(std::vector<int> a){
     a[i] = a[min_index];
     a[min_index] = tmp;
   }
+
+  // overall O(n^2)
   return a;
 }
 
@@ -170,8 +175,6 @@ int main(int argc, char *argv[])
 
     a = msort(a);
   }
-
-  a = msort(a);
 
 
   gettimeofday(&tp,NULL);
