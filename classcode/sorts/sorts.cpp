@@ -118,7 +118,10 @@ std::vector<int> msort(std::vector<int> list){
 
 
 void print_help(char *command_name){
-  std::cout << "Usage: " << command_name << " etc.\n";
+  std::cout << "Usage: " << command_name << "[-h | -p | -m N | -s N  | -a algorithm ]" << "\n\n";
+  std::cout << "       -m MAX ELEMENT SIZE\n";
+  std::cout << "       -a [s | m] : s - selection, m - merge\n";
+    
   
 }
 
