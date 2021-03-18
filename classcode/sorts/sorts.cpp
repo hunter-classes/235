@@ -119,35 +119,53 @@ std::vector<int> msort(std::vector<int> list){
 
 std::vector<int> qsort(std::vector<int> list){
 
+  int i,j;
+  
   if (list.size() <= 1){
     return list;
   }
 
   // select a pivot  <-- the birthday we chose
   // just select list[0] as your pivot value
-
+  int pivot = list[0];
+  
   // partition the data set such that all the values <=the pivot
   // are in one vector and all the values > the pivot are in the other
 
   std::vector<int> lower,higher;
-
-  // at this point we have
-  // pivot is list[0]
-  // lower has all the values <= pivot
-  // higher has all the values > pivot
-
+  for (i = 1; i < list.size(); i++){
+    if (list[i] <= pivot){
+      lower.push_back(list[i]);
+    } else {
+      higher.push_back(list[i]);
+    }
+  }
+  
   // recursively qsort lower
   // recurisively qsort higher
-
+  lower = qsort(lower);
+  higher = qsort(higher);
+  
   // copy lower + pivot + higher back into list and return it
+  for (i=0 ; i < lower.size(); i++){
+    list[i] = lower[i];
+  }
+
+  list[i] = pivot;
+  i++;
+
+  for (j=0; j < higher.size(); j++){
+    list[i] = higher[j];
+    i++;
+  }
   
-  
+  return list;
 }
 
 void print_help(char *command_name){
   std::cout << "Usage: " << command_name << "[-h | -p | -m N | -s N  | -a algorithm ]" << "\n\n";
   std::cout << "       -m MAX ELEMENT SIZE\n";
-  std::cout << "       -a [s | m] : s - selection, m - merge\n";
+  std::cout << "       -a [s | m  | q] : s - selection, m - merge, q = qsort\n";
     
   
 }
@@ -204,6 +222,9 @@ int main(int argc, char *argv[])
   } else if (algorithm == 'm'){
 
     a = msort(a);
+  } else if (algorithm == 'q'){
+    a = qsort(a);
+    
   }
 
 
