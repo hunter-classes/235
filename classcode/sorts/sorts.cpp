@@ -117,6 +117,33 @@ std::vector<int> msort(std::vector<int> list){
 }
 
 
+std::vector<int> qsort(std::vector<int> list){
+
+  if (list.size() <= 1){
+    return list;
+  }
+
+  // select a pivot  <-- the birthday we chose
+  // just select list[0] as your pivot value
+
+  // partition the data set such that all the values <=the pivot
+  // are in one vector and all the values > the pivot are in the other
+
+  std::vector<int> lower,higher;
+
+  // at this point we have
+  // pivot is list[0]
+  // lower has all the values <= pivot
+  // higher has all the values > pivot
+
+  // recursively qsort lower
+  // recurisively qsort higher
+
+  // copy lower + pivot + higher back into list and return it
+  
+  
+}
+
 void print_help(char *command_name){
   std::cout << "Usage: " << command_name << "[-h | -p | -m N | -s N  | -a algorithm ]" << "\n\n";
   std::cout << "       -m MAX ELEMENT SIZE\n";
