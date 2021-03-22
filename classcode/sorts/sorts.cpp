@@ -55,6 +55,8 @@ std::vector<int> ssort(std::vector<int> a){
 
 std::vector<int> merge(std::vector<int> left, std::vector<int> right)
 {
+  // this sort is NOT in place
+  
   int i = 0; 
   int j = 0;
   std::vector<int> merged;
@@ -118,7 +120,9 @@ std::vector<int> msort(std::vector<int> list){
 
 
 std::vector<int> qsort(std::vector<int> list){
-
+  // this particular implementation is pretty naive
+  // and it is also NOT in place.
+  
   int i,j;
   
   if (list.size() <= 1){
@@ -127,11 +131,18 @@ std::vector<int> qsort(std::vector<int> list){
 
   // select a pivot  <-- the birthday we chose
   // just select list[0] as your pivot value
+  // with this pivot if all items are same or
+  // list is sorted we get O(n^2)
+  // if there are huge numbers of duplicates it will also
+  // reduce that section to O(n^2)
   int pivot = list[0];
-  
+
   // partition the data set such that all the values <=the pivot
   // are in one vector and all the values > the pivot are in the other
 
+  // by choosing a good pivot
+  // we get an average case (expected case) O(nlgn)
+  
   std::vector<int> lower,higher;
   for (i = 1; i < list.size(); i++){
     if (list[i] <= pivot){
@@ -162,13 +173,59 @@ std::vector<int> qsort(std::vector<int> list){
   return list;
 }
 
+
+
+void qsort2(std::vector<int> &a, int left, int right)
+{
+  int i = left, j = right;
+  int tmp;
+  int pivot;
+
+  // we're still selecting a bad pivot here.
+  // we should take the median of a[left], a[right] and the one
+  // in the middle between them
+  pivot = a[left];
+  
+  /* partition */
+  while (i <= j) {
+    while (a[i] < pivot)
+      i++;
+    while (a[j] > pivot)
+      j--;
+    if (i <= j) {
+		tmp = a[i];
+		a[i] = a[j];
+		a[j] = tmp;
+		i++;
+		j--;
+      
+	      }
+	    }  
+  if (left < j)
+    qsort2(a, left, j);
+
+  if (i< right)
+    qsort2(a, i, right);
+  
+}
+
+
+
+
+
+
 void print_help(char *command_name){
   std::cout << "Usage: " << command_name << "[-h | -p | -m N | -s N  | -a algorithm ]" << "\n\n";
   std::cout << "       -m MAX ELEMENT SIZE\n";
-  std::cout << "       -a [s | m  | q] : s - selection, m - merge, q = qsort\n";
+  std::cout << "       -a [s | m  | q | 2] : s - selection, m - merge, q = qsort, 2 = qsort2\n";
     
   
 }
+
+
+
+
+
 
 extern char *optarg;
 
@@ -225,6 +282,8 @@ int main(int argc, char *argv[])
   } else if (algorithm == 'q'){
     a = qsort(a);
     
+  } else if (algorithm == '2'){
+    qsort2(a,0,a.size()-1);
   }
 
 
