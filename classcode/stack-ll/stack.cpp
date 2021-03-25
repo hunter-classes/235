@@ -22,14 +22,24 @@ stack::~stack(){
 
 void stack::push(int item){
   Node *tmp = new Node(item);
+  // new returns nullptr if it couldn't allocate memory
+  if (tmp==nullptr){
+    throw STACK_ERR_FULL;
+  }
   tmp->setNext(head);
   head = tmp;
 }
 
+
+/* 
+   if the stack is empty  it's an error condition to pop it.
+   we can't just return 0 becuase 0 could be a valid value in a 
+   non empty stack so we need a better way to handle this.
+*/
 int stack::pop(){
   int val;
   if (head==nullptr){
-    return 0; // this isn't really good because it isn't 0 - the stack is empty. 
+    throw STACK_ERR_EMPTY;
   }
   Node *tmp = head;
   val = head->getData();
@@ -40,7 +50,7 @@ int stack::pop(){
 
 int stack::top(){
   if (head==nullptr){
-    return 0; // also not good since the stack's empty and 0 is a value
+    throw STACK_ERR_EMPTY;
   }
   return head->getData();
 }
