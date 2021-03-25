@@ -1,5 +1,9 @@
 #include "stack.h"
 
+
+// issues:
+// no error checking, no bounds checkint etc.
+
 void stack::push(int item){
   a[topindex] = item;
   topindex++;

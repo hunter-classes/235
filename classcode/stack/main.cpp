@@ -16,5 +16,7 @@ int main()
   std::cout << s->is_empty() << " " << r << "\n";
   r = s->pop();
   std::cout << s->is_empty() << " " << r << "\n";
+
+  
   return 0;
 }
