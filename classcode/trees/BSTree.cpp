@@ -1,11 +1,33 @@
 #include <iostream>
 #include "Node.h"
 #include "BSTree.h"
+/*
+ * 
+ BST - Binary Search Tree
 
+ ordered tree where it's either empty or given a node N, all the
+ values in N's left subtree are less than the value in N and all the
+ values in N's right subtree are greater than the value in N.
+
+
+
+
+*/
 BSTree::BSTree(){
   root = nullptr;
 }
 
+/*
+ * Search for value in the BST.
+ if the tree is null it's not there
+ otherwise, keep going left or right until you find it or it's not there
+
+
+*/
+int BSTree::search(int value){
+
+  return 0;  
+}
 std::string BSTree::gds_helper(Node *n){
   std::string a,b,c;
   
@@ -44,7 +66,7 @@ void BSTree::setup(){
   root->setRight(n);
   Node *n2 = new Node(30);
   n->setRight(n2);
-  n2 = new Node(25);
+  n2 = new Node(15);
   n->setLeft(n2);
   n2 = new Node(5);
   root->setLeft(n2);
