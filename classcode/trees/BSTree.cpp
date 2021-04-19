@@ -17,16 +17,35 @@ BSTree::BSTree(){
   root = nullptr;
 }
 
+
 /*
  * Search for value in the BST.
  if the tree is null it's not there
  otherwise, keep going left or right until you find it or it's not there
 
+ remember, normally you're not just storing an int. Normally you're
+ storing a bunch of stuff like a whole struct or class and you're
+ searching on part of it like look someone up by ID.
 
 */
 int BSTree::search(int value){
+  Node *t = root;
 
-  return 0;  
+  while (t != nullptr){
+    if (t->getData() == value){
+      return value;
+    } else if (t->getData() > value){
+      t = t->getLeft();
+    } else {
+      t = t->getRight();
+    }
+      
+  }
+  // if we ever get here, t got to nullptr
+  // so the value isn't in the tree.
+  throw -1;
+  
+  return 0;
 }
 std::string BSTree::gds_helper(Node *n){
   std::string a,b,c;
