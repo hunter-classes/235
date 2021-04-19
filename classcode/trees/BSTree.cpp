@@ -47,6 +47,24 @@ int BSTree::search(int value){
   
   return 0;
 }
+
+/*
+ * insert a new node with value at its location. 
+
+   Note that inserting into an empty tree is a special case and also
+   that you can and should always insert new nodes as leaves rather than
+   as interior nodes.
+
+   To insert, you need to do something like the search but you need to get
+   a pointer to the node above (or before) where the new node is going to 
+   be a leaf and then add the new leaf.
+
+*/
+void BSTree::insert(int value){
+  
+  
+}
+
 std::string BSTree::gds_helper(Node *n){
   std::string a,b,c;
   
