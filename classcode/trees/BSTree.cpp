@@ -61,6 +61,32 @@ int BSTree::search(int value){
 
 */
 void BSTree::insert(int value){
+  Node *n = new Node(value);
+
+  if (root==nullptr){
+    root = n;
+    return;
+  }
+
+  Node *t = root; // to find the value's position
+  Node *t2; // pointer to piggyback (one behind)
+
+  while (t != nullptr){
+    t2 = t;
+
+    if (t->getData() < value){
+      t = t->getRight();
+    } else {
+      t = t->getLeft();
+    }
+  }
+  // at this point t points to nullptr but t2 points to the node before.
+
+  if (value < t2->getData()){
+    t2->setLeft(n);
+  } else {
+    t2->setRight(n);
+  }
   
   
 }
