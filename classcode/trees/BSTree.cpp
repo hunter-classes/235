@@ -91,26 +91,51 @@ void BSTree::insert(int value){
   
 }
 
-std::string BSTree::gds_helper(Node *n){
+// Traversal - visit every node in the tree
+// O(n)
+std::string BSTree::traverse(Node *n){
   std::string a,b,c;
   
   if (n==nullptr){
     return "";
   } else {
 
-    /*
-      1. recursively process the left subtree
-      2. Process the current node
-      3. recursively process the right subtree
 
-      This will traverse a BSTree in sorted order.
+    /*
+     *  pre-order traversal
+     
+     1. process the node
+     2. recurse to left subtree
+     3. recurse to right subtree
+
+      a = std::to_string(n->getData());
+      b =  traverse(n->getLeft());
+      c =  traverse(n->getRight());
+
+
+      * post-order traversal
+
+      1. recurse to left subtree
+      2. recurse to right subtree
+      3. process the node
+      
+      a =  traverse(n->getLeft());
+      b =  traverse(n->getRight());
+      c = std::to_string(n->getData());
 
     */
-    
-      a =  gds_helper(n->getLeft());
-      b = std::to_string(n->getData());
-      c =  gds_helper(n->getRight());
 
+    /*  
+	in-order traversal
+
+	1. recurse left subtree
+	2. process node
+	3. recurse right subtree
+     */
+
+    a =  traverse(n->getLeft());
+    b = std::to_string(n->getData());
+    c =  traverse(n->getRight());
 
     return a + ", " + b+ ", " + c;
 
@@ -119,7 +144,7 @@ std::string BSTree::gds_helper(Node *n){
 };
 
 std::string BSTree::get_debug_string(){
-  return gds_helper(root);
+  return traverse(root);
 };
 
 void BSTree::setup(){

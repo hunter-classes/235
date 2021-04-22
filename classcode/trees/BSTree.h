@@ -10,7 +10,7 @@ class BSTree{
 
 
   std::string get_debug_string();
-  std::string gds_helper(Node *n);
+  std::string traverse(Node *n);
   int search(int value);
   void insert(int value);
 
