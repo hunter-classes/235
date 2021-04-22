@@ -165,3 +165,12 @@ void BSTree::setup(){
   
 }
 
+int BSTree::treesum(Node *root){
+
+  
+};
+
+int BSTree::treesum(){
+  return treesum(root);
+  
+}

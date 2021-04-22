@@ -14,6 +14,8 @@ class BSTree{
   int search(int value);
   void insert(int value);
 
+  int treesum();
+  int treesum(Node *n);
   void setup();
   
 };
