@@ -16,6 +16,8 @@ class BSTree{
 
   int treesum();
   int treesum(Node *n);
+  int searchr(int value);
+  int searchr(int value, Node *n);
   void setup();
   
 };

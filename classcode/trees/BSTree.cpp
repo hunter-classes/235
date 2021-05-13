@@ -18,6 +18,29 @@ BSTree::BSTree(){
 }
 
 
+int BSTree::searchr(int value, Node *n){
+  if (n==nullptr)
+    throw -1;
+
+  int x = n->getData();
+  if (x == value){
+    return value;
+  } else if (x > value){
+    return searchr(value,n->getLeft());
+  }
+  else {
+    return searchr(value,n->getRight());
+  }
+  
+}
+  
+
+
+int BSTree::searchr(int value){
+  return searchr(value,root);
+  
+}
+
 /*
  * Search for value in the BST.
  if the tree is null it's not there
@@ -165,10 +188,19 @@ void BSTree::setup(){
   
 }
 
-int BSTree::treesum(Node *root){
+int BSTree::treesum(Node *n){
+  if (n==nullptr)
+    return 0;
 
+  int a,b,c;
+
+  a = n->getData();
+  b = treesum(n->getLeft());
+  c = treesum(n->getRight());
+
+  return a+b+c;
   
-};
+  };
 
 int BSTree::treesum(){
   return treesum(root);

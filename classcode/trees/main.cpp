@@ -8,9 +8,9 @@ int main()
   t->setup();
 
   std::cout <<  t->get_debug_string() << "\n";
-  int v = 13;
+  int v = 15;
   try {
-    int x  = t->search(v);
+    int x  = t->searchr(v);
     std::cout << x << "\n";
   } catch (int e){
     std::cout << v << " not found\n";
@@ -20,6 +20,9 @@ int main()
   t->insert(22);
   std::cout <<  t->get_debug_string() << "\n";
   t->insert(3);
-    std::cout <<  t->get_debug_string() << "\n";
+  std::cout <<  t->get_debug_string() << "\n";
+
+  std::cout << t->treesum() << "\n";
+    
   return 0;
 }
