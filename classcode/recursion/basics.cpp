@@ -20,24 +20,39 @@ int fact(int n){
   }
 }
 
-void f2(){
-  int b;
-  std::cout << b << "\n";
+
+
+int fib(int n){
+  if (n < 2){
+    return 1;
+  } else {
+    return fib(n - 1) + fib(n -2);
+  
+  }
 }
 
-void f1(){
-  int a;
-  a = 3;
-  std::cout << a << "\n";
-}
+int fib_iter(int n){
+  if (n < 2){
+    return 1;
+  }
 
+  int a = 1;
+  int b = 1;
+  int c;
+  while (n > 0){
+    c = a + b;
+    a = b;
+    b = c;
+    n = n - 1;
+    
+  }
+  return c;
+}
 
 int main()
-	 {
-	   for (int i = 1; i < 10; ++i) {
-	     std::cout << i << "! = " << fact(i) << "\n";
-	   }
-	   f1();
-	   f2();
-	   return 0;
-	 }
+	  {
+	    for (int i = 0; i < 100; ++i) {
+	      std::cout << i << " :  " << fib(i) << "\n";
+	    }
+	    return 0;
+	  }
