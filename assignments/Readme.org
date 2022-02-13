@@ -1,4 +1,4 @@
-* General instructions for all labs:
+* General instructions for all projects:
 
 ** Directory structure
 
