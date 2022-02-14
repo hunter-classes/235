@@ -26,28 +26,20 @@ void print_maze(std::string maze[],int lines){
 }
 
 void solve(std::string maze[], int lines, int row, int col, bool &solved){
-  // check the base cases
-
-  // base case 1are we at the exit?
   if (maze[row][col]==goal){
-      solved = true;
-      return;
+    solved = true;
+    return;
   }
-
   if (maze[row][col]==wall ||
       maze[row][col]==me |
       maze[row][col]==visited){
     return;
   }
 
-  
-  // add me at row col to the maze
   maze[row][col]=me;
   usleep(80000);
   print_maze(maze,lines);
   
-  // recusively try to solve by stepping once
-  // in each of the four drections.
   if (!solved) solve(maze,lines,row-1,col,solved);
   if (!solved) solve(maze,lines,row+1,col,solved);
   if (!solved) solve(maze,lines,row,col-1,solved);
