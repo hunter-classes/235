@@ -29,7 +29,7 @@ All projects will require a Makefile to control compilation.
 
 All Makefiles will require these targets
 
-- main - to build an executable named mane
+- main - to build an executable named main
 - clean - to remove .o files
 
 Additionally, some projects will require Doctest based testing. They
