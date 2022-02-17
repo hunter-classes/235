@@ -75,6 +75,8 @@ int main()
 
   std::cout << st.b << "\n";
 
+  sp->a = 100;
+  std::cout << sp->a << " " << st.a << "\n";
 
   return 0;
 }
