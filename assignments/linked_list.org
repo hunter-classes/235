@@ -1,0 +1,49 @@
+* Project 2 Link lists
+
+* Due: TBD
+
+
+* Folder and files
+
+- Create a folder under your assignment repo named *linked_list*
+  and place all files there.
+
+- This project will be built up as a series of smaller
+  assignments. Make sure to complete each part as assigned.
+
+* Part 1 - Due 2/24 before class
+
+** Watch these three videos:
+- https://youtu.be/mSQjWDAQx-o
+- https://youtu.be/Nj-hc0LvYjU
+- https://youtu.be/XRGqxNdNLAE
+
+** Add the code for a basic linked list it should include:
+- Node.h and Node.cpp as specified in the third video
+- List.h and List.cpp as specified in the third video
+- A main.cpp that can create a sample list
+- A Makefile that will build an executable named *main*.
+
+
+Try to build a small list and experiment with the data structure
+
+** Try to add the three routines specified in the video:
+1. locate
+2. remove
+3. A destructor
+
+We will go over these in class.
+
+** IMPORTANT NOTE
+
+For this part of the assignment it is important go upload your best
+attempt before class. This part will *not* be graded for correctness
+but rather for attempt. It doesn't have to work (for now) but the
+attempt must be there.
+
+
+* Part 2 and beyond
+
+When additional parts are added they will be announced on Zulip
+
+
