@@ -78,5 +78,18 @@ int main()
   sp->a = 100;
   std::cout << sp->a << " " << st.a << "\n";
 
+  // using pointers to make an array
+  int *ap = new int[10];
+  // but we delete it with this
+  delete[] ap;
+
+  sp = new struct s;
+
+  sp->a = 100;
+  sp->b = 200;
+  std::cout << sp << ":" << sp->a << " " << sp->b << "\n";
+  delete sp;;
+  std::cout << sp << ":" << sp->a << " " << sp->b << "\n";
   return 0;
+  
 }
