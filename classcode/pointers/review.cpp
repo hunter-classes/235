@@ -27,5 +27,10 @@ int main()
   std::cout << p1[1] << "\n";
   std::cout << p1[3] << "\n";
   std::cout << *(p1+3) << "\n";
+
+  p1++;
+
+  std::cout << *p1 << " "  << p1[0] << "\n";
+  
   return 0;
 }
