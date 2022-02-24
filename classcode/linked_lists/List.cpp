@@ -7,8 +7,19 @@ List::List() {
 }
 
 void List::insert(std::string data){
+  Node *tmp = new Node(data);
+  tmp->setNext(head);
+  this->head = tmp;
+  
 }
 
 std::string List::toString(){
-  return "";
+  std::string result = "";
+  Node *walker = this->head;
+  while (walker != nullptr){
+    result = result + walker->getData() + "->";
+    walker = walker->getNext();
+  }
+  result = result + "null";
+  return result;
 }
