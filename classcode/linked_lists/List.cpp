@@ -13,6 +13,25 @@ void List::insert(std::string data){
   
 }
 
+std::string List::get(int loc){
+  std::string result = "";
+  Node *walker = head;
+
+  // using walker as a boolean is
+  // the same as writing walker != nullptr
+  while (walker && loc > 0){
+    walker = walker->getNext();
+    loc--;
+  }
+  if (walker)
+    return walker->getData();
+  else
+    return "";
+    
+
+}
+
+
 std::string List::toString(){
   std::string result = "";
   Node *walker = this->head;
