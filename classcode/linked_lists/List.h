@@ -13,6 +13,7 @@ class List{
 
   std::string get(int loc);
 
+  int length();
 
   std::string toString(); // for testing and debugging
   

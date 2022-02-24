@@ -31,6 +31,16 @@ std::string List::get(int loc){
 
 }
 
+int List::length(){
+  int l = 0;
+  Node *walker = head;
+  while (walker){
+    l++;
+    walker = walker->getNext();
+  }
+  return l;
+}
+
 
 std::string List::toString(){
   std::string result = "";

@@ -17,5 +17,9 @@ int main()
   int i = 2;
   result = l->get(i);
   std::cout << "l["<<i<<"] = " << result << "\n";
+
+  std::cout << l->length() << "\n";
+  l->insert("Stuf");
+  std::cout << l->length() << "\n";
   return 0;
 }
