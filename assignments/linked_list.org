@@ -105,6 +105,8 @@ You should also make sensible decisions with respect to error / bounds
 conditions and the like. Base you decisions on what we wrote and
 discussed in class as well as your own opinions.
 
+As with your labs last semesters, there should be no keyboard input.
+
 Make sure to use Zulip to discuss any of this and to reach out if you
 need any assistance. 
 
