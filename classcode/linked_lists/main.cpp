@@ -5,21 +5,25 @@
 int main()
 {
   List *l = new List();
+
+  l->insert("zero");
+  l->insert("one");
+  l->insert("two");
+  l->insert("three");
+  l->insert("four");
+
   std::cout << l->toString() << "\n";
-  l->insert("Hello");
+  l->insert(3,"HellO");
   std::cout << l->toString() << "\n";
-  l->insert("world");
+  l->insert(3,"World");
   std::cout << l->toString() << "\n";
-  l->insert("!");
+  l->insert(0,"HellO");
+  std::cout << l->toString() << "\n";
+  l->insert(0,"front");
   std::cout << l->toString() << "\n";
 
-  std::string result;
-  int i = 2;
-  result = l->get(i);
-  std::cout << "l["<<i<<"] = " << result << "\n";
-
-  std::cout << l->length() << "\n";
-  l->insert("Stuf");
-  std::cout << l->length() << "\n";
+  l->remove(1);
+  std::cout << l->toString() << "\n";
+  delete l;
   return 0;
 }

@@ -7,10 +7,13 @@ class List{
 
  public:
   List();
-  // ~List();
+  ~List();
 
   void insert(std::string data);
+  void insert(int loc, std::string data);
 
+  void remove(int loc);
+  
   std::string get(int loc);
 
   int length();
