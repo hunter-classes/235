@@ -1,0 +1,54 @@
+* Project 3 Sorts
+
+* Due: TBD
+
+
+* Folder and files
+
+- Create a folder under assignments named *sorts*
+  and place all files there.
+
+- This project will be built up as a series of smaller
+  assignments. Make sure to complete each part as assigned.
+
+* Part 1 - Due 3/10 before class
+
+** Merge Sort
+
+Copy the sorts.cpp we did in class from the web site (or make sure you
+have the equivalent code).
+
+Add to it a routine named ~std::vector<int> msort(std::vector<int> v)~
+that performs the mergesort routine that we outlined in class.
+
+Remember the outline is:
+
+1. If the list you're sorting is less than size 2 then just return it.
+2. Otherwise
+   1. Split the list into two halves (equal if the list is even
+      length, and one off if the list odd length). Do this by copying
+      each half into a new std::vector
+   2. mergesort the two halves
+   3. Use the merge we wrote in class to merge the results into a new
+      std::vector
+   4. return the new std::vector<int>
+
+
+The signature should be ~std::vector<int> msort(std::vector v)~
+
+** Write another program named mode.cpp 
+
+In this program add the following routines:
+1. int count(std::vector<int> v, int value) - this will return the
+   number of times value appears in the unsorted vector v.
+2. int largest(std::vector<int> v) - this will return the largest
+   value in vector v.
+3. A main routine that builds a std::vector<int> of random values and
+   tests the above routines.
+4. int mode(std::vector<int> v)  which returns the mode of std::vector
+   v, that is, the item that appears the most frequently. If there are
+   more than one mode then just return any of them. That is, if the
+   vector contains 1,5,4,6,4,8,6,4,12,6,22 then you could return 4 or
+   6 because both appear most frequently - 3 times.
+
+   
