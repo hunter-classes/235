@@ -56,9 +56,33 @@ std::vector<int> merge(std::vector<int> left,
   std::vector<int> merged;
 
   // your code here
+  int l = 0;
+  int r = 0;
 
-  // remember merged.push_back(n)
-  // appends value n to the vector merged
+  while (l < left.size() &&
+	 r < right.size()){
+    if (left[l] < right[r]){
+      merged.push_back(left[l]);
+      l++;
+    } else {
+      merged.push_back(right[r]);
+      r++;
+    }
+  }
+
+  // add any extra elements in left
+  while (l < left.size()){
+    merged.push_back(left[l]);
+    l++;
+  }
+  
+
+  // add any extra elements in right
+  while (r < right.size()){
+    merged.push_back(right[r]);
+    r++;
+  }
+  	 
    
   return merged;
   
@@ -67,8 +91,8 @@ std::vector<int> merge(std::vector<int> left,
 
 int main()
 {
-  int size=102000;
-  int max_val=1000;
+  int size=20;
+  int max_val=100;
 
   srand(time(nullptr));
   std::vector<int> a(size);
@@ -76,11 +100,17 @@ int main()
   for (i=0;i<size; i++){
     a[i] = rand()%max_val;
   }
-  print_vector(a);
+  /*
+    print_vector(a);
   std::cout << "\n";
   a = ssort(a);
   print_vector(a);
-  
-  
+  */
+  std::vector<int> left = {1,2,5,6,10,15};
+  std::vector<int> right = {3,7,8,12,16,19,20};
+  print_vector(left);
+  print_vector(right);
+  std::vector<int> m = merge(left,right);
+  print_vector(m);
   return 0;
 }
