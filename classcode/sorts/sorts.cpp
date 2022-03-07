@@ -27,7 +27,6 @@ int find_min_index(std::vector<int> a,
   return min_index;
 }
 
-
 std::vector<int> ssort(std::vector<int> a){
   int i,min_index,j,tmp;
   int len = a.size();
@@ -45,10 +44,31 @@ std::vector<int> ssort(std::vector<int> a){
   return a;
 }
 
+/*
+  left and right are already sorted
+
+  merged should be a new vector with all the
+  elements in left and right, and result
+  should be sorted
+*/
+std::vector<int> merge(std::vector<int> left,
+		       std::vector<int> right){
+  std::vector<int> merged;
+
+  // your code here
+
+  // remember merged.push_back(n)
+  // appends value n to the vector merged
+   
+  return merged;
+  
+  
+}
+
 int main()
 {
-  int size=20;
-  int max_val=100;
+  int size=102000;
+  int max_val=1000;
 
   srand(time(nullptr));
   std::vector<int> a(size);
