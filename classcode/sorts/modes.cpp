@@ -22,17 +22,12 @@ int mode1(std::vector<int> v){
   int mod_i = 0;
   int mode_so_far = v[0];
   int mode_count_so_far = freq(v,v[0]);
-
-  // this loop is O(n)
   for(int i = 1 ; i < v.size();i++){
-    // freq is another loop through the data so this is anotehr O(n)
-    // even though it looks like just one function call 
     int current = freq(v,v[i]);
     if (current > mode_count_so_far){
       mode_so_far = v[i];
       mod_i = i;
     }
-    
   }
 
   return mode_so_far;
@@ -52,7 +47,7 @@ void print_vector(std::vector<int> a){
 int main(int argc, char *argv[])
 {
   int m;
-  int size = 20; // default vector size
+  int size = 10000; // default vector size
   int max_val = 100; // default max value for entries
 
   srand(time(NULL));
@@ -61,7 +56,7 @@ int main(int argc, char *argv[])
   for(i=0;i<size;i++){
     a[i] = rand()%max_val;    
   }
-  print_vector(a); 
+  //  print_vector(a); 
 
   m = mode1(a);
   std::cout << "mode1: " << m << "\n";
