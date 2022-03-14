@@ -89,6 +89,38 @@ std::vector<int> merge(std::vector<int> left,
   
 }
 
+std::vector<int> msort(std::vector<int> list){
+  // base case
+  // if the list is size 0 or 1 it's sorted
+  // so return it
+  if (list.size() <= 1){
+    return list;
+  }
+    
+  // split into two halves (doesn't matter how)
+  int mid = list.size() / 2;
+  
+  std::vector<int> a,b;
+
+  int i;
+  for (i = 0; i < mid; i++){
+    a.push_back(list[i]);
+  }
+
+  for (i=mid;i<list.size();i++){
+    b.push_back(list[i]);
+  }
+  
+  // recursively msort the two halves
+  a = msort(a);
+  b = msort(b);
+  
+  // merge them together
+  list = merge(a,b);
+  return list;
+}
+
+
 int main()
 {
   int size=20;
@@ -100,17 +132,11 @@ int main()
   for (i=0;i<size; i++){
     a[i] = rand()%max_val;
   }
-  /*
-    print_vector(a);
-  std::cout << "\n";
-  a = ssort(a);
+  
   print_vector(a);
-  */
-  std::vector<int> left = {1,2,5,6,10,15};
-  std::vector<int> right = {3,7,8,12,16,19,20};
-  print_vector(left);
-  print_vector(right);
-  std::vector<int> m = merge(left,right);
-  print_vector(m);
+  std::cout << "\n";
+  a = msort(a);
+  print_vector(a);
+  
   return 0;
 }
