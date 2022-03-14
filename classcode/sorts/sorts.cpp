@@ -121,22 +121,36 @@ std::vector<int> msort(std::vector<int> list){
 }
 
 
-int main()
-{
-  int size=10000;
-  int max_val=100;
-
-  srand(time(nullptr));
-  std::vector<int> a(size);
-  int i;
-  for (i=0;i<size; i++){
-    a[i] = rand()%max_val;
-  }
-  
-  print_vector(a);
-  std::cout << "\n";
-  a = ssort(a);
-  print_vector(a);
-  
-  return 0;
+void print_help(char *command_name){
+  std::cout << "Usage: "<< command_name;
+  std::cout << " [-h|-p|-m N|-s N|-a algorithm]\n\n";
+  std::cout << " -m MAX_ELEMENT_SIZE\n";
+  std::cout << " -s DATA_SET_SIZE\n";
+  std::cout << " -a[s|m]: s - selection, m - merge\n";
 }
+
+extern char *optarg;
+
+int main(int argc, char *argv[])
+  {
+    int size=50000;
+    int max_val=100;
+
+    print_help(argv[0]);
+    
+    
+    srand(time(nullptr));
+    std::vector<int> a(size);
+    int i;
+    for (i=0;i<size; i++){
+      a[i] = rand()%max_val;
+    }
+  
+    //print_vector(a);
+    std::cout << "\n";
+    //a = msort(a);
+    //print_vector(a);
+
+  
+    return 0;
+  }
