@@ -106,7 +106,7 @@ std::vector<int> msort(std::vector<int> list){
   for (i = 0; i < mid; i++){
     a.push_back(list[i]);
   }
-
+  
   for (i=mid;i<list.size();i++){
     b.push_back(list[i]);
   }
@@ -123,7 +123,7 @@ std::vector<int> msort(std::vector<int> list){
 
 int main()
 {
-  int size=20;
+  int size=10000;
   int max_val=100;
 
   srand(time(nullptr));
@@ -135,7 +135,7 @@ int main()
   
   print_vector(a);
   std::cout << "\n";
-  a = msort(a);
+  a = ssort(a);
   print_vector(a);
   
   return 0;
