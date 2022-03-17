@@ -142,7 +142,7 @@ int main(int argc, char *argv[])
 
 
     while ( ( c = getopt(argc, argv, "phs:m:a:")) != -1){
-
+      
       switch (c) {
       case 'h' :
 	print_help(argv[0]);
@@ -171,11 +171,13 @@ int main(int argc, char *argv[])
   
   
     if (print) {
-      print_vector(a); 
+      print_vector(a);
+      std::cout << "\n";
     }
 
     std::cout << "Starting the sort!\n";
     struct timeval tp;
+    
     gettimeofday(&tp,NULL);
     long start_time = tp.tv_sec *1000 + tp.tv_usec / 1000;
 
@@ -195,7 +197,7 @@ int main(int argc, char *argv[])
     if (print) {
       print_vector(a); 
     }
-
+    std::cout << "Algorithm: " << algorithm << "\n";
     std::cout << "Time: " << elapsed << "\n";
   
 
