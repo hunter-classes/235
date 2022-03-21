@@ -1,0 +1,4 @@
+Assuming you have not yet modified the string kYourName, the two sequences you want are
+
+Path out of labyrinth:        SESSWENNENSESS
+Path out of twisty labyrinth: ESWEESWENE
