@@ -1,5 +1,12 @@
 * Spring 2022 235 Pointer Maze
+** Due: Friday April 1 at 7:00am
 
+* Code and assignment location
+
+You can find a copy of this file as well all the other files needed
+for this assignment here:
+[[https://github.com/hunter-classes/235/tree/master/classcode/pointer-maze][
+https://github.com/hunter-classes/235/tree/master/classcode/pointer-maze]]
 
 * Notes: 
 
