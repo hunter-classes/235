@@ -1,6 +1,6 @@
 * Project 3 Sorts
 
-* Due: TBD
+* Due: 4/15 7:00am
 
 
 * Folder and files
@@ -51,4 +51,17 @@ In this program add the following routines:
    vector contains 1,5,4,6,4,8,6,4,12,6,22 then you could return 4 or
    6 because both appear most frequently - 3 times.
 
+   
+* Part 2 - Due  4/15 7:00am
+
+write a new version of qsort called qsort2. It shoulld have the
+following signature ~std::vector<int> qsort2(std::vector<int> list,
+int low, int high);~.
+
+It should:
+
+1. Use a reasonable pivot (as opposed to just list[0])
+2. It should perform the sort *in place*, that is it should
+   rearrange the elements in the vector around the pivot as opposed to
+   copying to a new vector. It should then return itself.
    
