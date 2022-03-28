@@ -151,7 +151,7 @@ std::vector<int> qsort(std::vector<int> list){
   higher = qsort(higher);
 
   // copy everything back into list
-  for (i=0 ; i < lower.size; i++){
+  for (i=0 ; i < lower.size(); i++){
     list[i]=lower[i];
   }
 
