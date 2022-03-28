@@ -123,6 +123,8 @@ std::vector<int> msort(std::vector<int> list){
 
 std::vector<int> qsort(std::vector<int> list){
 
+  int i,j;
+  
   // base case
   if (list.size() <= 1){
     return list;
@@ -130,19 +132,37 @@ std::vector<int> qsort(std::vector<int> list){
 
   // select a pivot value.
   // for now, just pick list[0]
-
+  int pivot = list[0];
+  
   // make 2 new vectors
   std::vector<int> lower,higher;
 
   // copy all the values < pivot value to lower
-
   // copy all the values >= pivot value to higher;
-
+  for (i=1; i < list.size(); i++){
+    if (list[i] < pivot){
+      lower.push_back(list[i]);
+    } else {
+      higher.push_back(list[i]);
+    }
+  }
+  
   lower = qsort(lower);
   higher = qsort(higher);
 
   // copy everything back into list
+  for (i=0 ; < lower.size; i++){
+    list[i]=lower[i];
+  }
 
+  list[i] = pivot;
+  i++;
+
+  for (j=0;j<higher.size();j++){
+    list[i] = higher[j];
+    i++;
+  }
+  
   // return the sorted list
   return list; 
 }
