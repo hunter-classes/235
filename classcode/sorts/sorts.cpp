@@ -144,7 +144,7 @@ std::vector<int> qsort(std::vector<int> list){
   // copy everything back into list
 
   // return the sorted list
-  return list;
+  return list; 
 }
 
 void print_help(char *command_name){
@@ -212,6 +212,8 @@ int main(int argc, char *argv[])
     } else if (algorithm == 'm'){
 
       a = msort(a);
+    } else if (algorithm == 'q'){
+      a = qsort(a);
     }
 
 
