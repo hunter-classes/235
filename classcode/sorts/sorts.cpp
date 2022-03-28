@@ -121,6 +121,32 @@ std::vector<int> msort(std::vector<int> list){
 }
 
 
+std::vector<int> qsort(std::vector<int> list){
+
+  // base case
+  if (list.size() <= 1){
+    return list;
+  }
+
+  // select a pivot value.
+  // for now, just pick list[0]
+
+  // make 2 new vectors
+  std::vector<int> lower,higher;
+
+  // copy all the values < pivot value to lower
+
+  // copy all the values >= pivot value to higher;
+
+  lower = qsort(lower);
+  higher = qsort(higher);
+
+  // copy everything back into list
+
+  // return the sorted list
+  return list;
+}
+
 void print_help(char *command_name){
   std::cout << "Usage: "<< command_name;
   std::cout << " [-h|-p|-m N|-s N|-a algorithm]\n\n";
