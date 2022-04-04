@@ -84,7 +84,7 @@ void print_vector(std::vector<int> a){
 int main(int argc, char *argv[])
 {
   int m;
-  int size = 5000000; // default vector size
+  int size = 50000; // default vector size
   int max_val = 100; // default max value for entries
 
   srand(time(NULL));
@@ -95,8 +95,8 @@ int main(int argc, char *argv[])
   }
   // print_vector(a); 
 
-  // m = mode1(a);
-  // std::cout << "mode1: " << m << "\n";
+  m = mode1(a);
+  std::cout << "mode1: " << m << "\n";
   
   m = mode2(a);
   std::cout << "mode2: " << m << "\n";
