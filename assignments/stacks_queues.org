@@ -1,0 +1,39 @@
+* Project 5 Stacks and Queues
+
+* Due: Friday April 29, 7:00
+
+
+* Folder and files
+
+- Create a folder under assignments named *stacks_queues* 
+  and place all files there.
+
+- This project requires:
+  - A Makefile
+  - Doctest based tests
+  - At least three targets in the Makefile
+    1. main (program executable)
+    2. tests (doctest tests executable)
+    3. clean (remove the .o files) 
+
+* Part 1 - Stacks
+
+Create a linked list based stack class. You can call the class
+whatever you'd like. Feel free to use code that you developed for
+earlier projects (Node, etc.). 
+
+You mist implement the following functionality:
+1. Constructor/destructors
+2. push(int) (you can change the type to std::string if you'd like)
+3. int pop() // remove and return the top item
+4. int top() // return but do not remove the top item
+5. bool is_empty() // return true if empty, false otherwise
+
+You must also use exception handling (try/catch) to handle error
+situations like stack empty and full (although you really can't test
+full easily so just implement it but don't worry about testing).
+
+
+* Part 2 - Queues
+
+This part will be added once we cover queues in class.
