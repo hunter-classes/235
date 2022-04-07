@@ -17,5 +17,6 @@ int main()
 
   int val = s->pop();
   std::cout << val << " " << s->top() << "\n";
+  
   return 0;
 }
