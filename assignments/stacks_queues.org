@@ -1,6 +1,6 @@
 * Project 5 Stacks and Queues
 
-* Due: Friday April 29, 7:00
+* Due: Friday April 29, 7:00AM
 
 
 * Folder and files
