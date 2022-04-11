@@ -7,7 +7,8 @@
 #define QUEUE_ERR_OTHER 4
 
 class queue{
-  private Node *head, *tail;
+ private:
+  Node *head, *tail;
   //     node1-->node2-->node3-->null
   // head--^                ^-----------tail
 
@@ -18,7 +19,8 @@ class queue{
 
   int front();
   std::string get_debug_string();
-
+  
 };
+
 
 
