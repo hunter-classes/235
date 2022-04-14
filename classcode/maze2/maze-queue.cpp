@@ -62,7 +62,7 @@ void solve(std::string maze[30], int row, int col){
     // put in that w'er at r,c
     // print then set it to . for the visual
     maze[r][c]='z';
-    usleep(40000);
+    usleep(4000);
     print_maze(maze);
     maze[r][c]='.';
 
