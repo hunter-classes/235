@@ -18,7 +18,7 @@ public:
 
   // std::string traverse(Node *n);
   
-  // int search(int value);
+  int search(int value);
   // void insert(int value);
 
   // int treesum();

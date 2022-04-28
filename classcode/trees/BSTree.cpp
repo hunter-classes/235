@@ -94,3 +94,37 @@ void BSTree::setup(){
   
 }
 
+
+int BSTree::search(int value){
+  Node *t = root;
+
+  while (t != nullptr){
+    int tval = t->getData();
+    if (tval==value){
+      // here we'd really return a full object
+      // with all the stuff associated with value
+      // not just an int
+      return value;
+    }
+
+    if (tval < value){
+      t = t->getRight();
+    } else {
+      t = t->getLeft();
+    }
+    
+  }
+
+  // if we get here then the value isn't
+  // in the tree
+
+  // normally, if we had a tree of objects
+  // we could return null but since we only have
+  // an int, we can't return an int to represent
+  // not found so we'll throw an exception
+
+  throw 1; // we should define our exceptions.
+
+    
+  
+}
