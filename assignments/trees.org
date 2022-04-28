@@ -1,0 +1,41 @@
+* Project 6 Trees
+
+* Due: See individual parts 
+
+
+* Folder and files
+
+- Create a folder under assignments named *trees* 
+  and place all files there.
+
+- This project requires:
+  - A Makefile
+  - Doctest based tests
+  - At least three targets in the Makefile
+    1. main (program executable)
+    2. tests (doctest tests executable)
+    3. clean (remove the .o files) 
+  - You should start with either the code from classcode or your own
+    equivalent.
+    
+* Important notes
+1. As indiciated above, you should test your project using doctest
+2. Make sure to use exceptions as we discussed in class to handle error conditions.
+
+
+* Part 1 - Due Monday 5/2 before class 
+
+- Write a recursive version of the search routine. You can write
+  additional routines so that you can add parameters. That is, you'll
+  probably have the public function ~int rsearch(int value)~ and also
+  another one that the first one calls: ~int rsearch(int value, Node
+  *p)~.
+- Try to write a recursive version of insert. This will not be graded
+  if you don't finish it but give it a try.
+- Generate 10 random numbers and then insert them into a BST using the
+  algorithm we designed. Draw out what that tree looks like. You don't
+  have to submit anything for this. 
+   
+
+
+* Part 2 - TBD
