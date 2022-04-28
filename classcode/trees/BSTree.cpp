@@ -146,8 +146,11 @@ void BSTree::insert(int value){
   while (p != nullptr) {
     // note that trailer is one level behind
     trailer = p;
-
-    if (p->getData() < value){
+    if (p->getData() == value){
+      // do the stuff when the node is already in the tree
+      return;
+    }
+    else if (p->getData() < value){
       p = p->getRight(); 
     } else {
       p = p->getLeft();
