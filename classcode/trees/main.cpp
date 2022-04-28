@@ -19,10 +19,10 @@ int main()
     
   }
 
-  //   t->insert(22);
-  //   std::cout <<  t->get_debug_string() << "\n";
-  //   t->insert(3);
-  //   std::cout <<  t->get_debug_string() << "\n";
+  t->insert(22);
+  std::cout <<  t->get_debug_string() << "\n";
+  t->insert(3);
+  std::cout <<  t->get_debug_string() << "\n";
 
   //   std::cout << t->treesum() << "\n";
     

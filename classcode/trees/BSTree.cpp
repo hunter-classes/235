@@ -89,7 +89,7 @@ void BSTree::setup(){
   root->setLeft(n2);
   n = new Node(3);
   n2->setLeft(n);
-  n = new Node(7);
+  n = new Node(8);
   n2->setRight(n);
   
 }
@@ -127,4 +127,47 @@ int BSTree::search(int value){
 
     
   
+}
+
+// we will always insert new nodes as leaves
+void BSTree::insert(int value){
+
+  // make a new node
+  Node *newnode = new Node(value);
+  
+  // search for where the node would go as a leaf
+  // that is, search until we get to null
+  // we can use the piggyback strategy of having
+  // a second pointer trail the lead pointer
+  Node *p = root;
+  Node *trailer;
+
+  
+  while (p != nullptr) {
+    // note that trailer is one level behind
+    trailer = p;
+
+    if (p->getData() < value){
+      p = p->getRight(); 
+    } else {
+      p = p->getLeft();
+    }
+  }
+  
+  // handle the special case of the tree
+  // being empty (null)
+  if (root==nullptr){
+    root=newnode;
+  } else {
+    // trailer points to the node ABOVE where the new node
+    // will go.
+    // we have to figure out if newnode goes on the
+    // left of trailer or on the right of trailer
+    if (trailer->getData() < value){
+      trailer->setRight(newnode);
+    } else {
+      trailer->setLeft(newnode);
+    }
+
+  }
 }
