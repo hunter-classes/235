@@ -90,7 +90,7 @@ void BSTree::setup(){
   n = new Node(3);
   n2->setLeft(n);
   n = new Node(7);
-  n2->setLeft(n);
+  n2->setRight(n);
   
 }
 
