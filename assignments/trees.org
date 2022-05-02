@@ -2,6 +2,8 @@
 
 * Final Due Date: TBD
 
+* Due: See individual parts 
+
 
 * Folder and files
 
@@ -15,24 +17,50 @@
     1. main (program executable)
     2. tests (doctest tests executable)
     3. clean (remove the .o files) 
-  - Start by copying over either the reference tree code from
-    classcode or start with your own.
+  - You should start with either the code from classcode or your own
+    equivalent.
     
 * Important notes
 1. As indiciated above, you should test your project using doctest
 2. Make sure to use exceptions as we discussed in class to handle error conditions.
 
 
-* Part 1 - BST Basics - Due Monday 5/2 before class
+* Part 1 - Due Monday 5/2 before class 
 
-- Add the insert routine we wrote in class to your Binary Search Tree.
-- Next add the search that we defined in class.
-- Next, write a recursive version of the search routine.
-- Finally, make sure to run the traversal routine (all three versions)
-  to see how they output the tree.
-  
+- Write a recursive version of the search routine. You can write
+  additional routines so that you can add parameters. That is, you'll
+  probably have the public function ~int rsearch(int value)~ and also
+  another one that the first one calls: ~int rsearch(int value, Node
+  *p)~.
+- Try to write a recursive version of insert. This will not be graded
+  if you don't finish it but give it a try.
+- Generate 10 random numbers and then insert them into a BST using the
+  algorithm we designed. Draw out what that tree looks like. You don't
+  have to submit anything for this. 
+   
 
-* Part 2
 
-* Part 3
+* Part 2 - Delete Due Monday 5/9 before class.
+- Write the delete routine using the algorithm we defined in class 
+- Here are two references but don't look at the code (unless you
+  really need to, first try, then ask for help on Zulip and then if
+  you use the code on these sites, make sure to cite it):
+  - http://www.algolist.net/Data_structures/Binary_search_tree/Removal
+  - https://helloacm.com/how-to-delete-a-node-from-a-binary-search-tree/
+* Part 3 - Due 5/16 before class.
+write at least 3 of these routines.
+
+A couple of people had low grades for the previous assignment due to
+them forgetting to push things. For those people, if you complete all
+5 of these and message me, I will also regrade previous lab if your
+only mistake was forgetting to push a file or an upper lower case
+issue (you know if this applies to you since we've spoken).
+
+- count leaves
+- height of a tree (a tree with just the root can be height 0 or 1,
+  whichever you prefer)
+- sum at given level level
+- tree pretty printer (this is a challenge, print out the tree using
+  tabs to make it look nice
+- cousins - true if two nodes at same level
 

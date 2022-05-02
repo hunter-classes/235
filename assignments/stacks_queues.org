@@ -25,7 +25,9 @@
 
 Create a linked list based stack class. You can call the class
 whatever you'd like. Feel free to use code that you developed for
-earlier projects (Node, etc.). 
+earlier projects (Node, etc.). *IMPORTANT NOTE:* Your stack class has to implement the list, you can reuse code but 
+you can't just have an instance variable with a list as a member you must create and manipulate the linked list in your stack class.
+
 
 You mist implement the following functionality:
 1. Constructor/destructors

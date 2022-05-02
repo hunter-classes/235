@@ -18,12 +18,12 @@ public:
 
   // std::string traverse(Node *n);
   
-  // int search(int value);
-  // void insert(int value);
+  int search(int value);
+  void insert(int value);
 
-  // int treesum();
-  // int treesum(Node *n);
-  // int searchr(int value);
-  // int searchr(int value, Node *n);
+  int treesum();
+  int treesum(Node *n);
+  int searchr(int value);
+  int searchr(int value, Node *n);
   
 };
