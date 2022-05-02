@@ -174,3 +174,36 @@ void BSTree::insert(int value){
 
   }
 }
+
+int BSTree::searchr(int value, Node *n){
+  if (n==nullptr){
+    throw 1;
+  }
+
+  int x = n->getData();
+  if (x==value){
+    return value;
+  } else if (x>value){
+    return searchr(value,n->getLeft());
+  } else {
+    return searchr(value,n->getRight());
+  }
+}
+
+int BSTree::searchr(int value){
+  return searchr(value,root);
+}
+
+int BSTree::treesum(Node *n){
+  if (n==nullptr){
+    return 0;
+  } else {
+    return n->getData() +
+      treesum(n->getLeft()) +
+      treesum(n->getRight());
+  }
+}
+
+int BSTree::treesum(){
+  return treesum(root);
+}
