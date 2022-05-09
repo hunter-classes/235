@@ -1,0 +1,58 @@
+* Project 7 Hashing 
+
+* Due Date: Wed 5/18 7:00am
+
+
+
+* Folder and files
+
+- Create a folder under assignments named *hashing* 
+  and place all files there.
+
+- This project requires:
+  - A Makefile
+  - Doctest based tests
+  - At least three targets in the Makefile
+    1. main (program executable)
+    2. tests (doctest tests executable)
+    3. clean (remove the .o files) 
+  - You should start with either the code from classcode or your own
+    equivalent.
+    
+* Resources
+- Overview of hash tables (7mins): https://www.youtube.com/watch?v=MfhjkfocRR0\
+- Linear Probing (16mins): https://www.youtube.com/watch?v=CwM-Cxilk4g
+- Sample hash functions (web page) : https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashFuncExamp.html
+
+    
+* Specifications
+For this assignment you will create a class named *Dictionary* which
+will implement a hash table with open hashing.
+
+Your *Dictionary* class should have a private instance variable that
+refers to an array of linked lists. You can either implement a new
+linked list or use code you've already written. *However* instead of
+storing *int* values in the nodes, the nodes should hold objects of
+type *Person*. The *Person* class is redefined here:
+[[https://github.com/hunter-classes/235/tree/master/classcode/hashing_files][https://github.com/hunter-classes/235/tree/master/classcode/hashing_files]]. You
+can modify the class if you'd like.
+
+Your hash function should combine the first and last names into a
+single string and then calculate the hash value. You can use a simple
+hash function like from the resource site listed above.
+
+Your *Dictionary* should support the following features:
+
+1. One or more constructors
+2. A destructor that frees all the linked lists
+3. A method to insert a new Person.
+4. A method to retrieve a Person (return nullptr if they're not in the
+   Dictionary).
+5. A Method to get all the keys - that is, all the first+last names.
+
+   
+* Important notes
+1. As indiciated above, you should test your project using doctest
+2. Make sure to use exceptions as we discussed in class to handle error conditions.
+
+
