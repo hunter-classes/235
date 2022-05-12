@@ -1,0 +1,59 @@
+* Project 8 - Heaps - OPTIONAL
+
+* Due Date: Wed 5/18 7:00am
+
+* IMPORTANT NOTE
+
+This project is optional. If you complete it, it will replace your
+lowest project grade. *However*, it is important that you test your
+project since I will grade it like any other project and that becomes
+the grade even if it's lower than the grade it replaces.
+
+So, to make sure this *helps* your grade, after you commit and push,
+clone your repo somewhere else and test it - both *main* and *tests*
+via the Makefile on a Linux system.
+
+If you decide to complete this project, you *must* DM me on zulip on
+or before the due date and time telling me you're done.
+
+
+
+
+* Folder and files
+
+- Create a folder under assignments named *heaps*
+  and place all files there.
+
+- This project requires:
+  - A Makefile
+  - Doctest based tests
+  - At least three targets in the Makefile
+    1. main (program executable)
+    2. tests (doctest tests executable)
+    3. clean (remove the .o files) 
+    
+* Resources
+
+
+- Overview of heaps and the heapsort: https://www.youtube.com/watch?v=mNYHDv7SbDI&list=PLEAYkSg4uSQ37A6_NrUnTHEKp6EkAxTMa&index=60&t=0s
+- An application of heaps: https://www.youtube.com/watch?v=VmogG01IjYc
+
+
+    
+* Specifications
+
+Write a program that includes a function *heapsort(int data[])*. This
+routine should implement the heapsort algorithm to sort the input
+array. It should:
+
+1. Turn the array int a heap using the algorithm we outlined in class
+   and by using the parent/child relationship so that the array
+   *becomes* the heap.
+2. Perform the heapsort as described in class using the end of the
+   array to hold the values as they become sorted.
+   
+
+The second video under resources talks through a cool algorithm using
+heaps. It isn't needed for the assignment but I strongly recommend you
+view it when you get a chance.
+
