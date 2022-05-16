@@ -32,7 +32,6 @@ std::string BSTree::traverse(Node *n){
 
     /*
      *  pre-order traversal
-     
      1. process the node
      2. recurse to left subtree
      3. recurse to right subtree
