@@ -14,6 +14,7 @@
 * Text
 - https://www.geeksforgeeks.org/data-structures/
 - https://opendatastructures.org/
+- https://www.scaler.com/topics/data-structures/
 
 * Extra Resources
 
