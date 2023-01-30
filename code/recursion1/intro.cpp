@@ -49,17 +49,43 @@ int fib(int n){
 }
 
 
+int fib_tail(int n, int a, int b, int c){
+  if (n==0){
+    return a;
+  }else{
+    return fib_tail(n-1,b,c,b+c);
+  }
+}
+
+int fib_tail(int n){
+  return fib_tail(n,1,1,2);
+}
+
+// Dynamic Programming
+// memoization 
+int fib_table[1000];
+int fib_dyn(int n){
+  if (n<3){
+    return 1;
+  } else if (fib_table[n] != 0){
+    return fib_table[n];
+  } else {
+    fib_table[n] = fib_dyn(n-1) + fib_dyn(n-2);
+    return fib_table[n];
+  }
+}
+
 int main()
 {
-  std::cout << fact(5) << "\n";
-  int max = 50;
-  for(int i = 0; i < max; i++){
-    std::cout << fib_iter(i) << ", ";
-  }
 
+  for (int i = 0; i < 1000; i++){
+    fib_table[i] = 0;
+  }
+  
+  
   std::cout << std::endl;
-  for(int i = 0; i < max; i++){
-    std::cout << i << " : " << fib(i) << "\n";
+  for(int i = 0; i < 50; i++){
+    std::cout << i << " : " << fib_dyn(i) << "\n";
   }
   std::cout << std::endl;
 
