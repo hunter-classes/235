@@ -25,13 +25,15 @@ int main()
   std::cout << n2->getData()<<"\n";
   std::cout << n1->getNext()->getData()<<"\n";
 
+  std::cout << "\n----------------\n\n";
   Node *tmp;
   // point tmp to n1
-  // and add the code to print out the contents
-  // of the entire list
-  // Hint: think of using a loop
-  
-  
+  tmp = n1;
+  while(tmp != nullptr){
+    std::cout << tmp->getData() << "\n";
+    tmp = tmp->getNext();
+  }
 
+  
   return 0;
 }
