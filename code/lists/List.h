@@ -7,11 +7,21 @@ class List{
   Node *head;
  public:
   List();
+  void insert(std::string data);
+
+  std::string toString(); // for testing purposes
+
   /*
+    Try to complete for Monday:
+    length()
+    get()
+    and think about the remove and 
+    other insert routine
+    
+    -------------------
     ~List();
     
-  void insert(std::string data);
-  void insert(int loc, std::string data); //0 indexed
+    void insert(int loc, std::string data); //0 indexed
 
   void remove(int loc);
 
@@ -19,7 +29,6 @@ class List{
 
   int length(); // the # of elements
 
-  std::string toString(); // for testing purposes
   */
   
   
