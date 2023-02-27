@@ -60,6 +60,14 @@ void List::insert(int loc, std::string data){
   }
 }
 
+/*
+  Alternate solution:
+    make a private variable to store the length
+    and just return it here.
+
+    Change all the insert/delete/remove type
+    routines to upate that variable 
+ */
 int List::length(){
   int count = 0;
   Node *walker = head;
