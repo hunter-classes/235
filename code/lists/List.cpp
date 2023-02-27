@@ -60,6 +60,16 @@ void List::insert(int loc, std::string data){
   }
 }
 
+int List::length(){
+  int count = 0;
+  Node *walker = head;
+  while (walker != nullptr){
+    count++;
+    walker = walker->getNext();
+  }
+  return count;
+}
+
 std::string List::toString(){
   Node *tmp = this->head;
   std::string result = "";
