@@ -8,6 +8,8 @@ class List{
  public:
   List();
   void insert(std::string data);
+  void insert(int loc, std::string data); //0 indexed
+
 
   std::string toString(); // for testing purposes
 
@@ -21,12 +23,10 @@ class List{
     -------------------
     ~List();
     
-    void insert(int loc, std::string data); //0 indexed
-
   void remove(int loc);
 
   std::string get(int loc);
-
+  bool contains();
   int length(); // the # of elements
 
   */
