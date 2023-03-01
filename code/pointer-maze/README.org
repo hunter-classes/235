@@ -1,0 +1,51 @@
+* Spring 2022 235 Pointer Maze
+** Due: Friday April 1 at 7:00am
+
+* Code and assignment location
+
+You can find a copy of this file as well all the other files needed
+for this assignment here:
+[[https://github.com/hunter-classes/235/tree/master/classcode/pointer-maze][
+https://github.com/hunter-classes/235/tree/master/classcode/pointer-maze]]
+
+* Notes: 
+
+This lab requires the use of gdb to map your maze. If you don't recall
+the material we went over last semester, you can find many gdb
+tutorials online including a number of YouTube.
+
+The provided Makefile is already set up to compile with debugging
+information (-g). to run the debugger you can type ~gdb --tui ./main/~
+where the *--tui* loads the text interface.
+
+The command `start` will run your program up to the first line in
+*main*. From there, the source code explains where to set the
+breakpoint from which to explore the maze.
+
+Recall you can print a variable (including variables holding and
+pointing to objects) using the print command. You can also use the
+star and arrow operators with print.
+
+You can also assign to a gdb variable for convenience. For example,
+in the code, you have a variable ~twistyStartLocation~, you can assign
+a gdb variable $x to point to it using ~set $x =
+twistyStartLocation~. You can also use the * and -> with gdb variables
+(just remember that the gdb variable has a $ so what $x points to
+would be *$x, the component something from $x would be
+$x->something). You can reasign and combine but remember you might
+need parentheses for order of operations. 
+
+
+* More instructions. 
+
+The specific instructions can be found int he pdf file
+*Assignment.pdf*. Note that when you start, you won't know what maze
+looks like but can use the default settings to check to check what you
+write for ~isPathToFreedom~. See *Solutions.txt* for answers to the
+default mazes. 
+
+Also note  that milestone 3 *will not be graded*. You can do that
+though for extra pointer practice. 
+
+
+
