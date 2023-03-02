@@ -1,5 +1,5 @@
-* Spring 2022 235 Pointer Maze
-** Due: Friday April 1 at 7:00am
+* Spring 2023 235 Pointer Maze
+** Due: TBD
 
 * Code and assignment location
 
