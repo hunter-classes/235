@@ -6,6 +6,21 @@ List::List(){
   head = nullptr;
 }
 
+List::~List(){
+  std::cerr << "Calling the destructor\n";
+  Node *walker = head;
+  Node *trailer = nullptr;
+  while (walker != nullptr){
+    trailer=  walker;
+    walker = walker->getNext();
+    std::cerr << "Deleting " << trailer->getData() << ", ";
+    delete trailer;
+  }
+  std::cerr << "\n";
+  
+  
+}
+
 // insert at the "front" (head)
 void List::insert(std::string data){
   Node *tmp = new Node(data);
@@ -77,6 +92,50 @@ int List::length(){
   }
   return count;
 }
+
+
+std::string List::find(std::string data){
+  Node *walker = head;
+  while (walker != nullptr && walker->getData() != data){
+    walker = walker->getNext();
+  }
+  if (walker == nullptr){
+    return "";
+  } else {
+    return walker->getData();
+  }
+  
+}
+
+void List::remove(int loc){
+  Node *walker, *trailer;
+  walker = this->head; // start of the list
+  trailer = nullptr; // one behind
+  
+  while(loc>0 && walker != nullptr){
+    loc=loc-1;
+    trailer=walker;
+    walker = walker->getNext();
+  }
+
+  if (walker == nullptr){
+    throw std::out_of_range("Tried to remove out of range");
+  }
+
+  if (trailer == nullptr){
+    // we're removing the first item in the list
+    head = walker->getNext();
+    delete walker;
+  } else {
+    // general case of having a node before the
+    // node to delete
+    trailer->setNext(walker->getNext());
+    delete walker;
+  }
+  
+
+}
+
 
 std::string List::toString(){
   Node *tmp = this->head;
