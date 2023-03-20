@@ -55,7 +55,7 @@ std::vector<int> ssort(std::vector<int> a){
 std::vector<int> merge(std::vector<int> left,
 		       std::vector<int> right){
   std::vector<int> merged;
-  int l,r; // indices into left and right;
+  int l=0,r=0; // indices into left and right;
 
   while (l < left.size() && r< right.size()){
     if (left[l] < right[r]){
@@ -80,25 +80,77 @@ std::vector<int> merge(std::vector<int> left,
 }
 
 std::vector<int> msort(std::vector<int> data){
-  std::vector<int> result;)
-  // if the size of data is <= 1 just return data
 
-  // othewise
-  // split data into 2 std::vectors left and right
-  // of equal size (or off by 1)
-  // then:
-  //   left = msort(left);
-  //   right = msort(right);
-  //   result= merge(left,right);
-  // 
+  std::vector<int> result;
+  
+  if (data.size() <= 1){
+    return data;
+  }
+  
+  std::vector<int> a,b;
+  int i;
+  int mid = data.size()/2;
+  for (i=0;i<mid;i++){
+    a.push_back(data[i]);
+  }
+  
+  for (;i<data.size();i++){
+    b.push_back(data[i]);
+  }
+
+  a = msort(a);
+  b = msort(b);
+
+  result= merge(a,b);
+  
   return result;
 }
 
 
-int main()
+void print_help(char *command_name){
+  std::cout << command_name << " usage: ";
+  std::cout << command_name << "[OPTIONS]\n";
+  std::cout << "  -h : help\n";
+  std::cout << "  -p : print\n";
+  std::cout << "  -s SIZE : array size\n";
+  std::cout << "  -m MAX_VAL : maximum element value\n";
+  std::cout << "  -a [s|m|q] : selection, merge, or quick sort\n";
+  
+}
+
+extern char *optarg;
+
+int main(int argc, char *argv[])
 {
+
+
   int size = 20;
   int max_val = 100;
+  char algorithm = 's' ; // selection sort
+  bool print = false;
+  char c;
+
+  while ( ( c = getopt(argc, argv, "phs:m:a:")) != -1){
+    switch(c) {
+    case 'h' :
+      print_help(argv[0]);
+      exit(0);
+      break;
+    case 'p' :
+      print = true;
+      break;
+    case 's' :
+      size = std::stoi(optarg);
+      break;
+    case 'm' :
+      max_val = std::stoi(optarg);
+      break;
+    case 'a' :
+      algorithm = optarg[0];
+    }
+  }
+  
+  
   srand(time(nullptr));
   std::vector<int> a(size);
   for (int i = 0; i < size; i++){
@@ -106,21 +158,32 @@ int main()
   }
 
 
-  // print_vector(a);
-  // std::vector<int> b = ssort(a);
-  // print_vector(b);
-
-  std::vector<int> left,right;
-  for (int i = 0; i < 10; i++){
-    left.push_back(rand()%max_val);
-    right.push_back(rand()%max_val);
+  if (print){
+    print_vector(a);
   }
-  left = ssort(left);
-  right = ssort(right);
-  print_vector(left);
-  print_vector(right);
-  std::cout << "\n----------\n";
-  std::vector<int> merged = merge(left,right);
-  print_vector(merged);
+
+  std::vector<int> b;
+  
+  std::cout << "Starting the sort.\n";
+  struct timeval tp;
+  gettimeofday(&tp, NULL);
+  long start_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
+  
+  if (algorithm=='s'){
+    b = ssort(a);
+  } else if (algorithm=='m'){
+    b = msort(a);
+  }
+
+  gettimeofday(&tp,NULL);
+  long current_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
+  long elapsed = current_time - start_time;
+  
+  if (print){
+    print_vector(b);
+  }
+
+  std::cout << "\n----------------\nElapsed Time: ";
+  std::cout << elapsed << "\n";
   return 0;
 }
