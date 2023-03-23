@@ -17,7 +17,17 @@ void print_vector(std::vector<int> a){
 }
 
 
-int find_min_index(std::vector<int> a,
+int index_of(int item, int data[], int len){
+  for (int i = 0; i < len; i++){
+    if (data[i] == item)
+      return i;
+  }
+
+  return -1;
+}
+
+
+  int find_min_index(std::vector<int> a,
 		   int start_index,
 		   int stop_index){
   int min_index = start_index;
