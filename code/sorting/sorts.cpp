@@ -116,6 +116,50 @@ std::vector<int> msort(std::vector<int> data){
   return result;
 }
 
+std::vector<int> qsort(std::vector<int> list){
+  int i,j;
+
+  // base case
+  if (list.size() <= 1){
+    return list;
+  }
+
+  // select pivot value
+  // for now we'll just pick list[0]
+  int pivot = list[0];
+
+  // make 2 new vectors
+  std::vector<int> lower,higher;
+  
+  // copy all the values < pivot to lower
+  // copy all the values >= pivot to higher;
+  for (i=1;i<list.size();i++){
+    if (list[i] < pivot){
+      lower.push_back(list[i]);
+    } else {
+      higher.push_back(list[i]);
+    }
+  }
+
+  // make our recursive calls
+  lower = qsort(lower);
+  higher = qsort(higher);
+
+  // copy everything back
+  for (i=0; i < lower.size(); i++){
+    list[i] = lower[i];
+  }
+  list[i] = pivot;
+  i++;
+  for (j=0;j<higher.size(); j++){
+    list[i] = higher[j];
+    i++;
+  }
+
+  // return the sorted list
+  return list;
+}
+
 
 void print_help(char *command_name){
   std::cout << command_name << " usage: ";
@@ -183,7 +227,10 @@ int main(int argc, char *argv[])
     b = ssort(a);
   } else if (algorithm=='m'){
     b = msort(a);
+  } else if (algorithm=='q'){
+    b = qsort(a);
   }
+  
 
   gettimeofday(&tp,NULL);
   long current_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
