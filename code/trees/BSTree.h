@@ -18,7 +18,7 @@ public:
 
   
   int search(int value);
-  ;; void insert(int value);
+  void insert(int value);
 
   //  int treesum();
   // int treesum(Node *n);

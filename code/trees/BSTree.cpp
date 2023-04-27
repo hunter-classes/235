@@ -82,6 +82,39 @@ int BSTree::search(int n){
   
 }
 
+void BSTree::insert(int n){
+  Node *new_node = new Node(n);
+
+  // special case if the tree is empty
+  if (root == nullptr){
+    root = new_node;
+    return;
+  }
+
+  // search for the insertion point
+  Node *current = root;
+  Node *trailer = nullptr;
+  while (current != nullptr){
+    trailer = current; // catch the trailer up
+    int val = current->getData();
+    if (n == val){
+      // update the node with the additional stuff
+      return;
+    } else if (n < val){
+      current = current->getLeft();
+    } else {
+      current = current->getRight();
+    }
+  }
+  // if we get here, trailer points to the
+  // node above the new node's location
+  if (n < trailer->getData()){
+    trailer->setLeft(new_node);
+  } else {
+    trailer->setRight(new_node);
+  }
+     
+}
 
 
 void BSTree::setup(){
