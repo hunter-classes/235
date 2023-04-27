@@ -50,11 +50,12 @@ std::string BSTree::traverse(Node *n){
 	3. recurse right subtree
     */
 
-    a =  traverse(n->getLeft());
+    a = traverse(n->getLeft());
     b = std::to_string(n->getData());
-    c =  traverse(n->getRight());
+    c = traverse(n->getRight());
+    
 
-    return a + ", " + b+ ", " + c;
+return a + ", " + b+ ", " + c;
 
      
   }
@@ -64,6 +65,16 @@ std::string BSTree::get_debug_string(){
   return traverse(root);
 }
 
+/*
+  if the BST is full/balanced
+  this will behave like a binary search - remove 1/2
+  the data set each time through
+  so O(lgn) preformance
+
+  IF THE tree isn't full/balanced it degenerates
+  into a linked list and you only get O(n)
+
+*/
 int BSTree::search(int n){
   Node *current = root;
 
@@ -82,6 +93,15 @@ int BSTree::search(int n){
   
 }
 
+/*
+  if the BST is full/balanced
+  this will behave like a binary search - remove 1/2
+  the data set each time through
+  so O(lgn) preformance
+
+  IF THE tree isn't full/balanced it degenerates
+  into a linked list and you only get O(n)
+*/
 void BSTree::insert(int n){
   Node *new_node = new Node(n);
 
