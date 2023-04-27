@@ -64,6 +64,26 @@ std::string BSTree::get_debug_string(){
   return traverse(root);
 }
 
+int BSTree::search(int n){
+  Node *current = root;
+
+  
+  while (current != nullptr){
+    int node_val = current->getData();
+    if (n == node_val){
+      return node_val;
+    } else if (n < node_val){
+      current = current->getLeft();
+    } else {
+      current = current->getRight();
+    }
+  }
+  throw 1; // returning a not found value would be better
+  
+}
+
+
+
 void BSTree::setup(){
   Node *n = new Node(10);
   root = n;
