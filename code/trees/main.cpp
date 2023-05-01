@@ -30,6 +30,17 @@ int main()
   std::cout << "found " << n << "\n";
 
   std::cout << t->get_debug_string() << "\n";
+
+  BSTree *t2 = new BSTree();
+  t2->insert(5);
+  t2->insert(3);
+  t2->insert(6);
+  t2->insert(2);
+  
+  std::cout << t2->get_debug_string() << "\n";
+  std::cout << t2->treesum() << "\n";
+  std::cout << t2->countodds() << "\n";
+  std::cout << t2->oddsum() << "\n";
   return 0;
 }
 

@@ -136,6 +136,59 @@ void BSTree::insert(int n){
      
 }
 
+int BSTree::treesum(Node *n){
+  if (n==nullptr){
+    return 0;
+  } else {
+    int value = n->getData();
+    return value + treesum(n->getLeft())
+      + treesum(n->getRight());
+  }
+}
+
+int BSTree::treesum(){
+  return treesum(root);
+}
+
+int BSTree::countodds(Node *n){
+  if (n==nullptr){
+    return 0;
+  } else {
+    int data = n->getData();
+    int value;
+    if (data%2==0) {
+      value = 0;
+    } else {
+      value = 1;
+    } 
+    return value + countodds(n->getLeft())
+      + countodds(n->getRight());
+  }
+}
+
+int BSTree::countodds(){
+  return countodds(root);
+}
+int BSTree::oddsum(Node *n){
+  if (n==nullptr){
+    return 0;
+  } else {
+    int data = n->getData();
+    int value;
+    if (data%2==0) {
+      value = 0;
+    } else {
+      value = data;
+    } 
+    return value + oddsum(n->getLeft())
+      + oddsum(n->getRight());
+  }
+}
+
+int BSTree::oddsum(){
+  return oddsum(root);
+}
+
 
 void BSTree::setup(){
   Node *n = new Node(10);
